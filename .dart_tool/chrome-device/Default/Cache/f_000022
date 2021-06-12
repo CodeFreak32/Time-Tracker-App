@@ -1,0 +1,468 @@
+define(['dart_sdk', 'packages/flutter_login_facebook/src/models/facebook_access_token.dart', 'packages/flutter_login_facebook/src/models/facebook_error.dart', 'packages/flutter_login_facebook/src/models/facebook_user_profile.dart', 'packages/flutter/src/services/system_channels.dart', 'packages/flutter_login_facebook/src/models/facebook_permission.dart', 'packages/flutter/src/foundation/print.dart'], (function load__packages__flutter_login_facebook__src__models__facebook_login_result_dart(dart_sdk, packages__flutter_login_facebook__src__models__facebook_access_token$46dart, packages__flutter_login_facebook__src__models__facebook_error$46dart, packages__flutter_login_facebook__src__models__facebook_user_profile$46dart, packages__flutter__src__services__system_channels$46dart, packages__flutter_login_facebook__src__models__facebook_permission$46dart, packages__flutter__src__foundation__print$46dart) {
+  'use strict';
+  const core = dart_sdk.core;
+  const _js_helper = dart_sdk._js_helper;
+  const async = dart_sdk.async;
+  const io = dart_sdk.io;
+  const dart = dart_sdk.dart;
+  const dartx = dart_sdk.dartx;
+  const facebook_access_token = packages__flutter_login_facebook__src__models__facebook_access_token$46dart.src__models__facebook_access_token;
+  const facebook_error = packages__flutter_login_facebook__src__models__facebook_error$46dart.src__models__facebook_error;
+  const facebook_user_profile = packages__flutter_login_facebook__src__models__facebook_user_profile$46dart.src__models__facebook_user_profile;
+  const message_codec = packages__flutter__src__services__system_channels$46dart.src__services__message_codec;
+  const platform_channel = packages__flutter__src__services__system_channels$46dart.src__services__platform_channel;
+  const message_codecs = packages__flutter__src__services__system_channels$46dart.src__services__message_codecs;
+  const facebook_permission = packages__flutter_login_facebook__src__models__facebook_permission$46dart.src__models__facebook_permission;
+  const print = packages__flutter__src__foundation__print$46dart.src__foundation__print;
+  var facebook_login_result = Object.create(dart.library);
+  var facebook_login = Object.create(dart.library);
+  var flutter_login_facebook = Object.create(dart.library);
+  var $_get = dartx._get;
+  var $cast = dartx.cast;
+  var $last = dartx.last;
+  var $split = dartx.split;
+  var $runtimeType = dartx.runtimeType;
+  var $hashCode = dartx.hashCode;
+  var $contains = dartx.contains;
+  var $map = dartx.map;
+  var $toList = dartx.toList;
+  var $isNotEmpty = dartx.isNotEmpty;
+  var $addAll = dartx.addAll;
+  dart._checkModuleNullSafetyMode(false);
+  var T = {
+    FacebookLoginStatusL: () => (T.FacebookLoginStatusL = dart.constFn(dart.legacy(facebook_login_result.FacebookLoginStatus)))(),
+    IdentityMapOfString$dynamic: () => (T.IdentityMapOfString$dynamic = dart.constFn(_js_helper.IdentityMap$(core.String, dart.dynamic)))(),
+    StringTovoid: () => (T.StringTovoid = dart.constFn(dart.fnType(dart.void, [core.String])))(),
+    FacebookAccessTokenN: () => (T.FacebookAccessTokenN = dart.constFn(dart.nullable(facebook_access_token.FacebookAccessToken)))(),
+    FacebookUserProfileN: () => (T.FacebookUserProfileN = dart.constFn(dart.nullable(facebook_user_profile.FacebookUserProfile)))(),
+    IdentityMapOfString$int: () => (T.IdentityMapOfString$int = dart.constFn(_js_helper.IdentityMap$(core.String, core.int)))(),
+    StringN: () => (T.StringN = dart.constFn(dart.nullable(core.String)))(),
+    FacebookPermissionL: () => (T.FacebookPermissionL = dart.constFn(dart.legacy(facebook_permission.FacebookPermission)))(),
+    StringL: () => (T.StringL = dart.constFn(dart.legacy(core.String)))(),
+    FacebookPermissionToString: () => (T.FacebookPermissionToString = dart.constFn(dart.fnType(core.String, [facebook_permission.FacebookPermission])))(),
+    IdentityMapOfString$Object: () => (T.IdentityMapOfString$Object = dart.constFn(_js_helper.IdentityMap$(core.String, core.Object)))()
+  };
+  const CT = Object.create({
+    _: () => (C, CT)
+  });
+  dart.defineLazy(CT, {
+    get C0() {
+      return C[0] = dart.const({
+        __proto__: facebook_login_result.FacebookLoginStatus.prototype,
+        [_name$]: "FacebookLoginStatus.success",
+        index: 0
+      });
+    },
+    get C1() {
+      return C[1] = dart.const({
+        __proto__: facebook_login_result.FacebookLoginStatus.prototype,
+        [_name$]: "FacebookLoginStatus.cancel",
+        index: 1
+      });
+    },
+    get C2() {
+      return C[2] = dart.const({
+        __proto__: facebook_login_result.FacebookLoginStatus.prototype,
+        [_name$]: "FacebookLoginStatus.error",
+        index: 2
+      });
+    },
+    get C3() {
+      return C[3] = dart.constList([C[0] || CT.C0, C[1] || CT.C1, C[2] || CT.C2], T.FacebookLoginStatusL());
+    },
+    get C5() {
+      return C[5] = dart.const({
+        __proto__: facebook_permission.FacebookPermission.prototype,
+        [_name]: "FacebookPermission.publicProfile",
+        index: 0
+      });
+    },
+    get C4() {
+      return C[4] = dart.constList([C[5] || CT.C5], T.FacebookPermissionL());
+    },
+    get C6() {
+      return C[6] = dart.constList([], T.StringL());
+    },
+    get C9() {
+      return C[9] = dart.const({
+        __proto__: message_codecs.StandardMessageCodec.prototype
+      });
+    },
+    get C8() {
+      return C[8] = dart.const({
+        __proto__: message_codecs.StandardMethodCodec.prototype,
+        [StandardMethodCodec_messageCodec]: C[9] || CT.C9
+      });
+    },
+    get C7() {
+      return C[7] = dart.const({
+        __proto__: platform_channel.MethodChannel.prototype,
+        [MethodChannel__binaryMessenger]: null,
+        [MethodChannel_codec]: C[8] || CT.C8,
+        [MethodChannel_name]: "flutter_login_facebook"
+      });
+    }
+  }, false);
+  var C = Array(10).fill(void 0);
+  var I = [
+    "file:///C:/Computer/src/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_login_facebook-1.0.1/lib/src/models/facebook_login_result.dart",
+    "package:flutter_login_facebook/src/models/facebook_login_result.dart",
+    "file:///C:/Computer/src/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_login_facebook-1.0.1/lib/src/facebook_login.dart",
+    "package:flutter_login_facebook/src/facebook_login.dart"
+  ];
+  var _name$ = dart.privateName(facebook_login_result, "_name");
+  facebook_login_result.FacebookLoginStatus = class FacebookLoginStatus extends core.Object {
+    toString() {
+      return this[_name$];
+    }
+  };
+  (facebook_login_result.FacebookLoginStatus.new = function(index, _name) {
+    if (index == null) dart.nullFailed(I[0], 5, 6, "index");
+    if (_name == null) dart.nullFailed(I[0], 5, 6, "_name");
+    this.index = index;
+    this[_name$] = _name;
+    ;
+  }).prototype = facebook_login_result.FacebookLoginStatus.prototype;
+  dart.addTypeTests(facebook_login_result.FacebookLoginStatus);
+  dart.addTypeCaches(facebook_login_result.FacebookLoginStatus);
+  dart.setLibraryUri(facebook_login_result.FacebookLoginStatus, I[1]);
+  dart.setFieldSignature(facebook_login_result.FacebookLoginStatus, () => ({
+    __proto__: dart.getFields(facebook_login_result.FacebookLoginStatus.__proto__),
+    index: dart.finalFieldType(core.int),
+    [_name$]: dart.finalFieldType(core.String)
+  }));
+  dart.defineExtensionMethods(facebook_login_result.FacebookLoginStatus, ['toString']);
+  facebook_login_result.FacebookLoginStatus.success = C[0] || CT.C0;
+  facebook_login_result.FacebookLoginStatus.cancel = C[1] || CT.C1;
+  facebook_login_result.FacebookLoginStatus.error = C[2] || CT.C2;
+  facebook_login_result.FacebookLoginStatus.values = C[3] || CT.C3;
+  var status$ = dart.privateName(facebook_login_result, "FacebookLoginResult.status");
+  var accessToken$ = dart.privateName(facebook_login_result, "FacebookLoginResult.accessToken");
+  var error$ = dart.privateName(facebook_login_result, "FacebookLoginResult.error");
+  facebook_login_result.FacebookLoginResult = class FacebookLoginResult extends core.Object {
+    get status() {
+      return this[status$];
+    }
+    set status(value) {
+      super.status = value;
+    }
+    get accessToken() {
+      return this[accessToken$];
+    }
+    set accessToken(value) {
+      super.accessToken = value;
+    }
+    get error() {
+      return this[error$];
+    }
+    set error(value) {
+      super.error = value;
+    }
+    toMap() {
+      let t0;
+      return new (T.IdentityMapOfString$dynamic()).from(["status", dart.toString(this.status)[$split](".")[$last], "accessToken", this.accessToken, "error", (t0 = this.error, t0 == null ? null : t0.toMap())]);
+    }
+    static _parseStatus(status) {
+      if (status == null) dart.nullFailed(I[0], 39, 50, "status");
+      switch (status) {
+        case "Success":
+        {
+          return facebook_login_result.FacebookLoginStatus.success;
+        }
+        case "Cancel":
+        {
+          return facebook_login_result.FacebookLoginStatus.cancel;
+        }
+        case "Error":
+        {
+          return facebook_login_result.FacebookLoginStatus.error;
+        }
+      }
+      dart.throw(new core.StateError.new("Invalid status: " + dart.str(status)));
+    }
+    _equals(other) {
+      if (other == null) return false;
+      return this === other || facebook_login_result.FacebookLoginResult.is(other) && dart.equals(this[$runtimeType], dart.runtimeType(other)) && this.status == other.status && dart.equals(this.accessToken, other.accessToken) && dart.equals(this.error, other.error);
+    }
+    get hashCode() {
+      let t0, t0$, t0$0, t0$1;
+      return (dart.notNull(dart.hashCode(this.status)) ^ dart.notNull((t0$ = (t0 = this.accessToken, t0 == null ? null : dart.hashCode(t0)), t0$ == null ? 0 : t0$)) ^ dart.notNull((t0$1 = (t0$0 = this.error, t0$0 == null ? null : dart.hashCode(t0$0)), t0$1 == null ? 0 : t0$1))) >>> 0;
+    }
+    toString() {
+      return "FacebookLoginResult(status: " + dart.str(this.status) + ", accessToken: " + dart.str(this.accessToken) + ", " + "error: " + dart.str(this.error) + ")";
+    }
+  };
+  (facebook_login_result.FacebookLoginResult.new = function(status, accessToken, opts) {
+    if (status == null) dart.nullFailed(I[0], 13, 28, "status");
+    if (accessToken == null) dart.nullFailed(I[0], 13, 61, "accessToken");
+    let error = opts && 'error' in opts ? opts.error : null;
+    this[status$] = status;
+    this[accessToken$] = accessToken;
+    this[error$] = error;
+    ;
+  }).prototype = facebook_login_result.FacebookLoginResult.prototype;
+  (facebook_login_result.FacebookLoginResult.error = function(opts) {
+    let error = opts && 'error' in opts ? opts.error : null;
+    this[error$] = error;
+    this[status$] = facebook_login_result.FacebookLoginStatus.error;
+    this[accessToken$] = null;
+    ;
+  }).prototype = facebook_login_result.FacebookLoginResult.prototype;
+  (facebook_login_result.FacebookLoginResult.fromMap = function(map) {
+    if (map == null) dart.nullFailed(I[0], 20, 52, "map");
+    this[status$] = facebook_login_result.FacebookLoginResult._parseStatus(core.String.as(map[$_get]("status")));
+    this[accessToken$] = map[$_get]("accessToken") != null ? new facebook_access_token.FacebookAccessToken.fromMap(core.Map.as(map[$_get]("accessToken"))[$cast](core.String, dart.dynamic)) : null;
+    this[error$] = map[$_get]("error") != null ? facebook_error.FacebookError.fromMap(core.Map.as(map[$_get]("error"))[$cast](core.String, dart.dynamic)) : null;
+    ;
+  }).prototype = facebook_login_result.FacebookLoginResult.prototype;
+  dart.addTypeTests(facebook_login_result.FacebookLoginResult);
+  dart.addTypeCaches(facebook_login_result.FacebookLoginResult);
+  dart.setMethodSignature(facebook_login_result.FacebookLoginResult, () => ({
+    __proto__: dart.getMethods(facebook_login_result.FacebookLoginResult.__proto__),
+    toMap: dart.fnType(core.Map$(core.String, dart.dynamic), [])
+  }));
+  dart.setLibraryUri(facebook_login_result.FacebookLoginResult, I[1]);
+  dart.setFieldSignature(facebook_login_result.FacebookLoginResult, () => ({
+    __proto__: dart.getFields(facebook_login_result.FacebookLoginResult.__proto__),
+    status: dart.finalFieldType(facebook_login_result.FacebookLoginStatus),
+    accessToken: dart.finalFieldType(dart.nullable(facebook_access_token.FacebookAccessToken)),
+    error: dart.finalFieldType(dart.nullable(facebook_error.FacebookError))
+  }));
+  dart.defineExtensionMethods(facebook_login_result.FacebookLoginResult, ['_equals', 'toString']);
+  dart.defineExtensionAccessors(facebook_login_result.FacebookLoginResult, ['hashCode']);
+  var debug$ = dart.privateName(facebook_login, "FacebookLogin.debug");
+  var _log = dart.privateName(facebook_login, "_log");
+  var _isLoggedIn = dart.privateName(facebook_login, "_isLoggedIn");
+  var _name = dart.privateName(facebook_permission, "_name");
+  var _invokeLoginMethod = dart.privateName(facebook_login, "_invokeLoginMethod");
+  var MethodChannel__binaryMessenger = dart.privateName(platform_channel, "MethodChannel._binaryMessenger");
+  var StandardMethodCodec_messageCodec = dart.privateName(message_codecs, "StandardMethodCodec.messageCodec");
+  var MethodChannel_codec = dart.privateName(platform_channel, "MethodChannel.codec");
+  var MethodChannel_name = dart.privateName(platform_channel, "MethodChannel.name");
+  facebook_login.FacebookLogin = class FacebookLogin extends core.Object {
+    get debug() {
+      return this[debug$];
+    }
+    set debug(value) {
+      super.debug = value;
+    }
+    get accessToken() {
+      return async.async(T.FacebookAccessTokenN(), function* accessToken() {
+        let tokenData = (yield facebook_login.FacebookLogin._channel.invokeMethod(core.Map, "getAccessToken"));
+        return tokenData != null ? new facebook_access_token.FacebookAccessToken.fromMap(tokenData[$cast](core.String, dart.dynamic)) : null;
+      });
+    }
+    get sdkVersion() {
+      return async.async(core.String, function* sdkVersion() {
+        let t0;
+        let res = (yield facebook_login.FacebookLogin._channel.invokeMethod(core.String, "getSdkVersion"));
+        t0 = res;
+        return t0 == null ? "n/a" : t0;
+      });
+    }
+    get isLoggedIn() {
+      return async.async(core.bool, (function* isLoggedIn() {
+        let token = (yield this.accessToken);
+        return this[_isLoggedIn](token);
+      }).bind(this));
+    }
+    getUserProfile() {
+      return async.async(T.FacebookUserProfileN(), (function* getUserProfile() {
+        if ((yield this.isLoggedIn) === false) {
+          if (dart.test(this.debug)) this[_log]("Not logged in. User profile is null");
+          return null;
+        }
+        try {
+          let profileData = (yield facebook_login.FacebookLogin._channel.invokeMethod(core.Map, "getUserProfile"));
+          if (dart.test(this.debug)) this[_log]("User profile: " + dart.str(profileData));
+          if (profileData != null) {
+            return new facebook_user_profile.FacebookUserProfile.fromMap(profileData[$cast](core.String, dart.dynamic));
+          }
+        } catch (e$) {
+          let e = dart.getThrown(e$);
+          if (message_codec.PlatformException.is(e)) {
+            if (dart.test(this.debug)) this[_log]("Get profile error: " + dart.str(e));
+          } else
+            throw e$;
+        }
+        return null;
+      }).bind(this));
+    }
+    getProfileImageUrl(opts) {
+      let width = opts && 'width' in opts ? opts.width : null;
+      if (width == null) dart.nullFailed(I[2], 83, 52, "width");
+      let height = opts && 'height' in opts ? opts.height : null;
+      return async.async(T.StringN(), (function* getProfileImageUrl() {
+        let t1;
+        if ((yield this.isLoggedIn) === false) {
+          if (dart.test(this.debug)) this[_log]("Not logged in. Profile image url is null");
+          return null;
+        }
+        try {
+          let url = (yield facebook_login.FacebookLogin._channel.invokeMethod(core.String, "getProfileImageUrl", new (T.IdentityMapOfString$int()).from(["width", width, "height", (t1 = height, t1 == null ? width : t1)])));
+          if (dart.test(this.debug)) this[_log]("Profile image url: " + dart.str(url));
+          return url;
+        } catch (e$) {
+          let e = dart.getThrown(e$);
+          if (message_codec.PlatformException.is(e)) {
+            if (dart.test(this.debug)) this[_log]("Get profile image url error: " + dart.str(e));
+          } else
+            throw e$;
+        }
+        return null;
+      }).bind(this));
+    }
+    getUserEmail() {
+      return async.async(T.StringN(), (function* getUserEmail() {
+        let token = (yield this.accessToken);
+        if (!dart.test(this[_isLoggedIn](token))) {
+          if (dart.test(this.debug)) this[_log]("Not logged in. Email is null");
+          return null;
+        }
+        if (!dart.test(dart.nullCheck(token).permissions[$contains](facebook_permission['FacebookPermissionExtension|get#name'](facebook_permission.FacebookPermission.email)))) {
+          if (dart.test(this.debug)) this[_log]("User did not accept `email` permission. Email is null");
+          return null;
+        }
+        try {
+          let email = (yield facebook_login.FacebookLogin._channel.invokeMethod(core.String, "getUserEmail"));
+          if (dart.test(this.debug)) this[_log]("User email: " + dart.str(email));
+          return email;
+        } catch (e$) {
+          let e = dart.getThrown(e$);
+          if (message_codec.PlatformException.is(e)) {
+            if (dart.test(this.debug)) this[_log]("Get user email error: " + dart.str(e));
+          } else
+            throw e$;
+        }
+        return null;
+      }).bind(this));
+    }
+    logIn(opts) {
+      let permissions = opts && 'permissions' in opts ? opts.permissions : C[4] || CT.C4;
+      if (permissions == null) dart.nullFailed(I[2], 143, 33, "permissions");
+      let customPermissions = opts && 'customPermissions' in opts ? opts.customPermissions : C[6] || CT.C6;
+      if (customPermissions == null) dart.nullFailed(I[2], 146, 20, "customPermissions");
+      return async.async(facebook_login_result.FacebookLoginResult, (function* logIn() {
+        let permissionsArg = permissions[$map](core.String, dart.fn(e => {
+          if (e == null) dart.nullFailed(I[2], 147, 45, "e");
+          return facebook_permission['FacebookPermissionExtension|get#name'](e);
+        }, T.FacebookPermissionToString()))[$toList]();
+        if (dart.test(customPermissions[$isNotEmpty])) permissionsArg[$addAll](customPermissions);
+        if (dart.test(this.debug)) this[_log]("Log In with permissions " + dart.str(permissionsArg));
+        return this[_invokeLoginMethod]("logIn", new (T.IdentityMapOfString$Object()).from(["permissions", permissionsArg]));
+      }).bind(this));
+    }
+    expressLogin() {
+      return async.async(facebook_login_result.FacebookLoginResult, (function* expressLogin() {
+        if (!dart.test(io.Platform.isAndroid)) dart.assertFailed(null, I[2], 163, 12, "Platform.isAndroid");
+        if (dart.test(this.debug)) this[_log]("Trying to expressLogin");
+        return this[_invokeLoginMethod]("expressLogin");
+      }).bind(this));
+    }
+    logOut() {
+      if (dart.test(this.debug)) this[_log]("Log Out");
+      return facebook_login.FacebookLogin._channel.invokeMethod(dart.void, "logOut");
+    }
+    [_isLoggedIn](token) {
+      return token != null && dart.test(new core.DateTime.now().isBefore(token.expires));
+    }
+    [_invokeLoginMethod](method, $arguments = null) {
+      if (method == null) dart.nullFailed(I[2], 176, 57, "method");
+      return async.async(facebook_login_result.FacebookLoginResult, (function* _invokeLoginMethod() {
+        let loginResultData = (yield facebook_login.FacebookLogin._channel.invokeMethod(core.Map, "logIn", $arguments));
+        if (dart.test(this.debug)) this[_log]("Result: " + dart.str(loginResultData));
+        return loginResultData != null ? new facebook_login_result.FacebookLoginResult.fromMap(loginResultData[$cast](core.String, dart.dynamic)) : new facebook_login_result.FacebookLoginResult.error();
+      }).bind(this));
+    }
+    [_log](message) {
+      if (message == null) dart.nullFailed(I[2], 187, 20, "message");
+      if (dart.test(this.debug)) print.debugPrint("[FB] " + dart.str(message));
+    }
+  };
+  (facebook_login.FacebookLogin.new = function(opts) {
+    let debug = opts && 'debug' in opts ? opts.debug : false;
+    if (debug == null) dart.nullFailed(I[2], 30, 23, "debug");
+    this[debug$] = debug;
+    if (dart.test(this.debug)) this.sdkVersion.then(dart.void, dart.fn(v => {
+      if (v == null) dart.nullFailed(I[2], 31, 33, "v");
+      return this[_log]("SDK version: " + dart.str(v));
+    }, T.StringTovoid()));
+  }).prototype = facebook_login.FacebookLogin.prototype;
+  dart.addTypeTests(facebook_login.FacebookLogin);
+  dart.addTypeCaches(facebook_login.FacebookLogin);
+  dart.setMethodSignature(facebook_login.FacebookLogin, () => ({
+    __proto__: dart.getMethods(facebook_login.FacebookLogin.__proto__),
+    getUserProfile: dart.fnType(async.Future$(dart.nullable(facebook_user_profile.FacebookUserProfile)), []),
+    getProfileImageUrl: dart.fnType(async.Future$(dart.nullable(core.String)), [], {height: dart.nullable(core.int)}, {width: core.int}),
+    getUserEmail: dart.fnType(async.Future$(dart.nullable(core.String)), []),
+    logIn: dart.fnType(async.Future$(facebook_login_result.FacebookLoginResult), [], {customPermissions: core.List$(core.String), permissions: core.List$(facebook_permission.FacebookPermission)}, {}),
+    expressLogin: dart.fnType(async.Future$(facebook_login_result.FacebookLoginResult), []),
+    logOut: dart.fnType(async.Future$(dart.void), []),
+    [_isLoggedIn]: dart.fnType(core.bool, [dart.nullable(facebook_access_token.FacebookAccessToken)]),
+    [_invokeLoginMethod]: dart.fnType(async.Future$(facebook_login_result.FacebookLoginResult), [core.String], [dart.nullable(core.Map$(core.String, core.Object))]),
+    [_log]: dart.fnType(dart.void, [core.String])
+  }));
+  dart.setGetterSignature(facebook_login.FacebookLogin, () => ({
+    __proto__: dart.getGetters(facebook_login.FacebookLogin.__proto__),
+    accessToken: async.Future$(dart.nullable(facebook_access_token.FacebookAccessToken)),
+    sdkVersion: async.Future$(core.String),
+    isLoggedIn: async.Future$(core.bool)
+  }));
+  dart.setLibraryUri(facebook_login.FacebookLogin, I[3]);
+  dart.setFieldSignature(facebook_login.FacebookLogin, () => ({
+    __proto__: dart.getFields(facebook_login.FacebookLogin.__proto__),
+    debug: dart.finalFieldType(core.bool)
+  }));
+  dart.defineLazy(facebook_login.FacebookLogin, {
+    /*facebook_login.FacebookLogin._methodLogIn*/get _methodLogIn() {
+      return "logIn";
+    },
+    /*facebook_login.FacebookLogin._methodExpressLogIn*/get _methodExpressLogIn() {
+      return "expressLogin";
+    },
+    /*facebook_login.FacebookLogin._methodLogOut*/get _methodLogOut() {
+      return "logOut";
+    },
+    /*facebook_login.FacebookLogin._methodGetAccessToken*/get _methodGetAccessToken() {
+      return "getAccessToken";
+    },
+    /*facebook_login.FacebookLogin._methodGetUserProfile*/get _methodGetUserProfile() {
+      return "getUserProfile";
+    },
+    /*facebook_login.FacebookLogin._methodGetUserEmail*/get _methodGetUserEmail() {
+      return "getUserEmail";
+    },
+    /*facebook_login.FacebookLogin._methodGetProfileImageUrl*/get _methodGetProfileImageUrl() {
+      return "getProfileImageUrl";
+    },
+    /*facebook_login.FacebookLogin._methodGetSdkVersion*/get _methodGetSdkVersion() {
+      return "getSdkVersion";
+    },
+    /*facebook_login.FacebookLogin._permissionsArg*/get _permissionsArg() {
+      return "permissions";
+    },
+    /*facebook_login.FacebookLogin._widthArg*/get _widthArg() {
+      return "width";
+    },
+    /*facebook_login.FacebookLogin._heightArg*/get _heightArg() {
+      return "height";
+    },
+    /*facebook_login.FacebookLogin._channel*/get _channel() {
+      return C[7] || CT.C7;
+    }
+  }, false);
+  dart.trackLibraries("packages/flutter_login_facebook/src/models/facebook_login_result.dart", {
+    "package:flutter_login_facebook/src/models/facebook_login_result.dart": facebook_login_result,
+    "package:flutter_login_facebook/src/facebook_login.dart": facebook_login,
+    "package:flutter_login_facebook/flutter_login_facebook.dart": flutter_login_facebook
+  }, {
+  }, '{"version":3,"sourceRoot":"","sources":["facebook_login_result.dart","../facebook_login.dart"],"names":[],"mappings":"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","file":"../../../../../../../../../../packages/flutter_login_facebook/src/models/facebook_login_result.dart.lib.js"}');
+  // Exports:
+  return {
+    src__models__facebook_login_result: facebook_login_result,
+    src__facebook_login: facebook_login,
+    flutter_login_facebook: flutter_login_facebook
+  };
+}));
+
+//# sourceMappingURL=facebook_login_result.dart.lib.js.map

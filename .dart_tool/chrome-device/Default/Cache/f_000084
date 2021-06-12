@@ -1,0 +1,311 @@
+define(['dart_sdk', 'packages/provider/src/provider.dart', 'packages/time_tracker_flutter_course/services/database.dart', 'packages/time_tracker_flutter_course/app/home/entries/entries_bloc.dart', 'packages/flutter/src/widgets/widget_span.dart', 'packages/flutter/src/material/icon_button.dart', 'packages/flutter/src/widgets/async.dart', 'packages/time_tracker_flutter_course/app/home/entries/entries_list_tile.dart', 'packages/time_tracker_flutter_course/app/home/jobs/list_items_builder.dart'], (function load__packages__time_tracker_flutter_course__app__home__entries__entries_page_dart(dart_sdk, packages__provider__src__provider$46dart, packages__time_tracker_flutter_course__services__database$46dart, packages__time_tracker_flutter_course__app__home__entries__entries_bloc$46dart, packages__flutter__src__widgets__widget_span$46dart, packages__flutter__src__material__icon_button$46dart, packages__flutter__src__widgets__async$46dart, packages__time_tracker_flutter_course__app__home__entries__entries_list_tile$46dart, packages__time_tracker_flutter_course__app__home__jobs__list_items_builder$46dart) {
+  'use strict';
+  const core = dart_sdk.core;
+  const dart = dart_sdk.dart;
+  const dartx = dart_sdk.dartx;
+  const provider = packages__provider__src__provider$46dart.src__provider;
+  const database = packages__time_tracker_flutter_course__services__database$46dart.services__database;
+  const entries_bloc = packages__time_tracker_flutter_course__app__home__entries__entries_bloc$46dart.app__home__entries__entries_bloc;
+  const framework = packages__flutter__src__widgets__widget_span$46dart.src__widgets__framework;
+  const widget_inspector = packages__flutter__src__widgets__widget_span$46dart.src__widgets__widget_inspector;
+  const text = packages__flutter__src__widgets__widget_span$46dart.src__widgets__text;
+  const scaffold = packages__flutter__src__material__icon_button$46dart.src__material__scaffold;
+  const app_bar = packages__flutter__src__material__icon_button$46dart.src__material__app_bar;
+  const async = packages__flutter__src__widgets__async$46dart.src__widgets__async;
+  const entries_list_tile = packages__time_tracker_flutter_course__app__home__entries__entries_list_tile$46dart.app__home__entries__entries_list_tile;
+  const list_items_builder = packages__time_tracker_flutter_course__app__home__jobs__list_items_builder$46dart.app__home__jobs__list_items_builder;
+  var entries_page = Object.create(dart.library);
+  dart._checkModuleNullSafetyMode(false);
+  var T = {
+    DatabaseL: () => (T.DatabaseL = dart.constFn(dart.legacy(database.Database)))(),
+    EntriesBlocL: () => (T.EntriesBlocL = dart.constFn(dart.legacy(entries_bloc.EntriesBloc)))(),
+    ProviderOfEntriesBlocL: () => (T.ProviderOfEntriesBlocL = dart.constFn(provider.Provider$(T.EntriesBlocL())))(),
+    BuildContextL: () => (T.BuildContextL = dart.constFn(dart.legacy(framework.BuildContext)))(),
+    BuildContextLToEntriesBlocL: () => (T.BuildContextLToEntriesBlocL = dart.constFn(dart.fnType(T.EntriesBlocL(), [T.BuildContextL()])))(),
+    _LocationL: () => (T._LocationL = dart.constFn(dart.legacy(widget_inspector._Location)))(),
+    EntriesListTileModelL: () => (T.EntriesListTileModelL = dart.constFn(dart.legacy(entries_list_tile.EntriesListTileModel)))(),
+    ListOfEntriesListTileModelL: () => (T.ListOfEntriesListTileModelL = dart.constFn(core.List$(T.EntriesListTileModelL())))(),
+    ListLOfEntriesListTileModelL: () => (T.ListLOfEntriesListTileModelL = dart.constFn(dart.legacy(T.ListOfEntriesListTileModelL())))(),
+    StreamBuilderOfListLOfEntriesListTileModelL: () => (T.StreamBuilderOfListLOfEntriesListTileModelL = dart.constFn(async.StreamBuilder$(T.ListLOfEntriesListTileModelL())))(),
+    ListItemsBuilderOfEntriesListTileModelL: () => (T.ListItemsBuilderOfEntriesListTileModelL = dart.constFn(list_items_builder.ListItemsBuilder$(T.EntriesListTileModelL())))(),
+    EntriesListTileL: () => (T.EntriesListTileL = dart.constFn(dart.legacy(entries_list_tile.EntriesListTile)))(),
+    BuildContextLAndEntriesListTileModelLToEntriesListTileL: () => (T.BuildContextLAndEntriesListTileModelLToEntriesListTileL = dart.constFn(dart.fnType(T.EntriesListTileL(), [T.BuildContextL(), T.EntriesListTileModelL()])))(),
+    ListItemsBuilderLOfEntriesListTileModelL: () => (T.ListItemsBuilderLOfEntriesListTileModelL = dart.constFn(dart.legacy(T.ListItemsBuilderOfEntriesListTileModelL())))(),
+    AsyncSnapshotOfListLOfEntriesListTileModelL: () => (T.AsyncSnapshotOfListLOfEntriesListTileModelL = dart.constFn(async.AsyncSnapshot$(T.ListLOfEntriesListTileModelL())))(),
+    AsyncSnapshotLOfListLOfEntriesListTileModelL: () => (T.AsyncSnapshotLOfListLOfEntriesListTileModelL = dart.constFn(dart.legacy(T.AsyncSnapshotOfListLOfEntriesListTileModelL())))(),
+    BuildContextLAndAsyncSnapshotLOfListLOfEntriesListTileModelLToListItemsBuilderLOfEntriesListTileModelL: () => (T.BuildContextLAndAsyncSnapshotLOfListLOfEntriesListTileModelLToListItemsBuilderLOfEntriesListTileModelL = dart.constFn(dart.fnType(T.ListItemsBuilderLOfEntriesListTileModelL(), [T.BuildContextL(), T.AsyncSnapshotLOfListLOfEntriesListTileModelL()])))()
+  };
+  const CT = Object.create({
+    _: () => (C, CT)
+  });
+  dart.defineLazy(CT, {
+    get C1() {
+      return C[1] = dart.constList([], T._LocationL());
+    },
+    get C0() {
+      return C[0] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[1] || CT.C1,
+        [_Location_name]: null,
+        [_Location_column]: 14,
+        [_Location_line]: 13,
+        [_Location_file]: "file:///C:/Computer/project/time_tracker_flutter_course/lib/app/home/entries/entries_page.dart"
+      });
+    },
+    get C4() {
+      return C[4] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "create",
+        [_Location_column]: 7,
+        [_Location_line]: 12,
+        [_Location_file]: null
+      });
+    },
+    get C5() {
+      return C[5] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 7,
+        [_Location_line]: 13,
+        [_Location_file]: null
+      });
+    },
+    get C3() {
+      return C[3] = dart.constList([C[4] || CT.C4, C[5] || CT.C5], T._LocationL());
+    },
+    get C2() {
+      return C[2] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[3] || CT.C3,
+        [_Location_name]: null,
+        [_Location_column]: 12,
+        [_Location_line]: 11,
+        [_Location_file]: "file:///C:/Computer/project/time_tracker_flutter_course/lib/app/home/entries/entries_page.dart"
+      });
+    },
+    get C8() {
+      return C[8] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 21,
+        [_Location_line]: 21,
+        [_Location_file]: null
+      });
+    },
+    get C7() {
+      return C[7] = dart.constList([C[8] || CT.C8], T._LocationL());
+    },
+    get C6() {
+      return C[6] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[7] || CT.C7,
+        [_Location_name]: null,
+        [_Location_column]: 16,
+        [_Location_line]: 21,
+        [_Location_file]: "file:///C:/Computer/project/time_tracker_flutter_course/lib/app/home/entries/entries_page.dart"
+      });
+    },
+    get C11() {
+      return C[11] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "title",
+        [_Location_column]: 9,
+        [_Location_line]: 21,
+        [_Location_file]: null
+      });
+    },
+    get C12() {
+      return C[12] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "elevation",
+        [_Location_column]: 9,
+        [_Location_line]: 22,
+        [_Location_file]: null
+      });
+    },
+    get C10() {
+      return C[10] = dart.constList([C[11] || CT.C11, C[12] || CT.C12], T._LocationL());
+    },
+    get C9() {
+      return C[9] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[10] || CT.C10,
+        [_Location_name]: null,
+        [_Location_column]: 15,
+        [_Location_line]: 20,
+        [_Location_file]: "file:///C:/Computer/project/time_tracker_flutter_course/lib/app/home/entries/entries_page.dart"
+      });
+    },
+    get C15() {
+      return C[15] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "appBar",
+        [_Location_column]: 7,
+        [_Location_line]: 20,
+        [_Location_file]: null
+      });
+    },
+    get C16() {
+      return C[16] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "body",
+        [_Location_column]: 7,
+        [_Location_line]: 24,
+        [_Location_file]: null
+      });
+    },
+    get C14() {
+      return C[14] = dart.constList([C[15] || CT.C15, C[16] || CT.C16], T._LocationL());
+    },
+    get C13() {
+      return C[13] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[14] || CT.C14,
+        [_Location_name]: null,
+        [_Location_column]: 12,
+        [_Location_line]: 19,
+        [_Location_file]: "file:///C:/Computer/project/time_tracker_flutter_course/lib/app/home/entries/entries_page.dart"
+      });
+    },
+    get C19() {
+      return C[19] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "model",
+        [_Location_column]: 60,
+        [_Location_line]: 35,
+        [_Location_file]: null
+      });
+    },
+    get C18() {
+      return C[18] = dart.constList([C[19] || CT.C19], T._LocationL());
+    },
+    get C17() {
+      return C[17] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[18] || CT.C18,
+        [_Location_name]: null,
+        [_Location_column]: 44,
+        [_Location_line]: 35,
+        [_Location_file]: "file:///C:/Computer/project/time_tracker_flutter_course/lib/app/home/entries/entries_page.dart"
+      });
+    },
+    get C22() {
+      return C[22] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "snapshot",
+        [_Location_column]: 11,
+        [_Location_line]: 34,
+        [_Location_file]: null
+      });
+    },
+    get C23() {
+      return C[23] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "itemBuilder",
+        [_Location_column]: 11,
+        [_Location_line]: 35,
+        [_Location_file]: null
+      });
+    },
+    get C21() {
+      return C[21] = dart.constList([C[22] || CT.C22, C[23] || CT.C23], T._LocationL());
+    },
+    get C20() {
+      return C[20] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[21] || CT.C21,
+        [_Location_name]: null,
+        [_Location_column]: 16,
+        [_Location_line]: 33,
+        [_Location_file]: "file:///C:/Computer/project/time_tracker_flutter_course/lib/app/home/entries/entries_page.dart"
+      });
+    },
+    get C26() {
+      return C[26] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "stream",
+        [_Location_column]: 7,
+        [_Location_line]: 31,
+        [_Location_file]: null
+      });
+    },
+    get C27() {
+      return C[27] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "builder",
+        [_Location_column]: 7,
+        [_Location_line]: 32,
+        [_Location_file]: null
+      });
+    },
+    get C25() {
+      return C[25] = dart.constList([C[26] || CT.C26, C[27] || CT.C27], T._LocationL());
+    },
+    get C24() {
+      return C[24] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[25] || CT.C25,
+        [_Location_name]: null,
+        [_Location_column]: 12,
+        [_Location_line]: 30,
+        [_Location_file]: "file:///C:/Computer/project/time_tracker_flutter_course/lib/app/home/entries/entries_page.dart"
+      });
+    }
+  }, false);
+  var C = Array(28).fill(void 0);
+  var I = ["package:time_tracker_flutter_course/app/home/entries/entries_page.dart"];
+  var _Location_parameterLocations = dart.privateName(widget_inspector, "_Location.parameterLocations");
+  var _Location_name = dart.privateName(widget_inspector, "_Location.name");
+  var _Location_column = dart.privateName(widget_inspector, "_Location.column");
+  var _Location_line = dart.privateName(widget_inspector, "_Location.line");
+  var _Location_file = dart.privateName(widget_inspector, "_Location.file");
+  var _buildContents = dart.privateName(entries_page, "_buildContents");
+  entries_page.EntriesPage = class EntriesPage extends framework.StatelessWidget {
+    static create(context) {
+      let database = provider.Provider.of(T.DatabaseL(), context, {listen: false});
+      return new (T.ProviderOfEntriesBlocL()).new({create: dart.fn(_ => new entries_bloc.EntriesBloc.new({database: database}), T.BuildContextLToEntriesBlocL()), child: new entries_page.EntriesPage.new({$creationLocationd_0dea112b090073317d4: C[0] || CT.C0}), $creationLocationd_0dea112b090073317d4: C[2] || CT.C2});
+    }
+    build(context) {
+      return new scaffold.Scaffold.new({appBar: new app_bar.AppBar.new({title: new text.Text.new("Entries", {$creationLocationd_0dea112b090073317d4: C[6] || CT.C6}), elevation: 2.0, $creationLocationd_0dea112b090073317d4: C[9] || CT.C9}), body: this[_buildContents](context), $creationLocationd_0dea112b090073317d4: C[13] || CT.C13});
+    }
+    [_buildContents](context) {
+      let bloc = provider.Provider.of(T.EntriesBlocL(), context, {listen: false});
+      return new (T.StreamBuilderOfListLOfEntriesListTileModelL()).new({stream: bloc.entriesTileModelStream, builder: dart.fn((context, snapshot) => new (T.ListItemsBuilderOfEntriesListTileModelL()).new({snapshot: snapshot, itemBuilder: dart.fn((context, model) => new entries_list_tile.EntriesListTile.new({model: model, $creationLocationd_0dea112b090073317d4: C[17] || CT.C17}), T.BuildContextLAndEntriesListTileModelLToEntriesListTileL()), $creationLocationd_0dea112b090073317d4: C[20] || CT.C20}), T.BuildContextLAndAsyncSnapshotLOfListLOfEntriesListTileModelLToListItemsBuilderLOfEntriesListTileModelL()), $creationLocationd_0dea112b090073317d4: C[24] || CT.C24});
+    }
+  };
+  (entries_page.EntriesPage.new = function(opts) {
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    entries_page.EntriesPage.__proto__.new.call(this, {$creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+    ;
+  }).prototype = entries_page.EntriesPage.prototype;
+  dart.addTypeTests(entries_page.EntriesPage);
+  dart.addTypeCaches(entries_page.EntriesPage);
+  dart.setMethodSignature(entries_page.EntriesPage, () => ({
+    __proto__: dart.getMethods(entries_page.EntriesPage.__proto__),
+    build: dart.fnType(dart.legacy(framework.Widget), [dart.legacy(framework.BuildContext)]),
+    [_buildContents]: dart.fnType(dart.legacy(framework.Widget), [dart.legacy(framework.BuildContext)])
+  }));
+  dart.setLibraryUri(entries_page.EntriesPage, I[0]);
+  dart.trackLibraries("packages/time_tracker_flutter_course/app/home/entries/entries_page.dart", {
+    "package:time_tracker_flutter_course/app/home/entries/entries_page.dart": entries_page
+  }, {
+  }, '{"version":3,"sourceRoot":"","sources":["entries_page.dart"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;kBAQoC;AAC1B,qBAAoB,oCAAa,OAAO,WAAU;AACxD,YAAO,+CACG,QAAC,KAAM,4CAAsB,QAAQ,6CACtC;IAEX;UAG0B;AACxB,YAAO,oCACG,+BACC,kBAAK,gFACD,oEAEP,qBAAe,OAAO;IAEhC;qBAEmC;AAC3B,iBAAgB,uCAAgB,OAAO,WAAU;AACvD,YAAO,oEACG,AAAK,IAAD,kCACH,SAAC,SAAS,aACV,iEACK,QAAQ,eACL,SAAC,SAAS,UAAU,kDAAuB,KAAK;IAIrE;;;;;;EACF","file":"../../../../../../../packages/time_tracker_flutter_course/app/home/entries/entries_page.dart.lib.js"}');
+  // Exports:
+  return {
+    app__home__entries__entries_page: entries_page
+  };
+}));
+
+//# sourceMappingURL=entries_page.dart.lib.js.map

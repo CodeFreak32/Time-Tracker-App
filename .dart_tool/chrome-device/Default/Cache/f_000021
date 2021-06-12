@@ -1,0 +1,365 @@
+define(['dart_sdk'], (function load__packages__flutter_login_facebook__src__models__facebook_permission_dart(dart_sdk) {
+  'use strict';
+  const core = dart_sdk.core;
+  const _js_helper = dart_sdk._js_helper;
+  const dart = dart_sdk.dart;
+  const dartx = dart_sdk.dartx;
+  var facebook_permission = Object.create(dart.library);
+  var $_get = dartx._get;
+  dart._checkModuleNullSafetyMode(false);
+  var T = {
+    FacebookPermissionL: () => (T.FacebookPermissionL = dart.constFn(dart.legacy(facebook_permission.FacebookPermission)))(),
+    LinkedMapOfFacebookPermission$String: () => (T.LinkedMapOfFacebookPermission$String = dart.constFn(_js_helper.LinkedMap$(facebook_permission.FacebookPermission, core.String)))()
+  };
+  const CT = Object.create({
+    _: () => (C, CT)
+  });
+  dart.defineLazy(CT, {
+    get C0() {
+      return C[0] = dart.const({
+        __proto__: facebook_permission.FacebookPermission.prototype,
+        [_name$]: "FacebookPermission.publicProfile",
+        index: 0
+      });
+    },
+    get C1() {
+      return C[1] = dart.const({
+        __proto__: facebook_permission.FacebookPermission.prototype,
+        [_name$]: "FacebookPermission.userFriends",
+        index: 1
+      });
+    },
+    get C2() {
+      return C[2] = dart.const({
+        __proto__: facebook_permission.FacebookPermission.prototype,
+        [_name$]: "FacebookPermission.email",
+        index: 2
+      });
+    },
+    get C3() {
+      return C[3] = dart.const({
+        __proto__: facebook_permission.FacebookPermission.prototype,
+        [_name$]: "FacebookPermission.userAboutMe",
+        index: 3
+      });
+    },
+    get C4() {
+      return C[4] = dart.const({
+        __proto__: facebook_permission.FacebookPermission.prototype,
+        [_name$]: "FacebookPermission.userActionsBooks",
+        index: 4
+      });
+    },
+    get C5() {
+      return C[5] = dart.const({
+        __proto__: facebook_permission.FacebookPermission.prototype,
+        [_name$]: "FacebookPermission.userActionsFitness",
+        index: 5
+      });
+    },
+    get C6() {
+      return C[6] = dart.const({
+        __proto__: facebook_permission.FacebookPermission.prototype,
+        [_name$]: "FacebookPermission.userActionsMusic",
+        index: 6
+      });
+    },
+    get C7() {
+      return C[7] = dart.const({
+        __proto__: facebook_permission.FacebookPermission.prototype,
+        [_name$]: "FacebookPermission.userActionsNews",
+        index: 7
+      });
+    },
+    get C8() {
+      return C[8] = dart.const({
+        __proto__: facebook_permission.FacebookPermission.prototype,
+        [_name$]: "FacebookPermission.userActionsVideo",
+        index: 8
+      });
+    },
+    get C9() {
+      return C[9] = dart.const({
+        __proto__: facebook_permission.FacebookPermission.prototype,
+        [_name$]: "FacebookPermission.userBirthday",
+        index: 9
+      });
+    },
+    get C10() {
+      return C[10] = dart.const({
+        __proto__: facebook_permission.FacebookPermission.prototype,
+        [_name$]: "FacebookPermission.userEducationHistory",
+        index: 10
+      });
+    },
+    get C11() {
+      return C[11] = dart.const({
+        __proto__: facebook_permission.FacebookPermission.prototype,
+        [_name$]: "FacebookPermission.userEvents",
+        index: 11
+      });
+    },
+    get C12() {
+      return C[12] = dart.const({
+        __proto__: facebook_permission.FacebookPermission.prototype,
+        [_name$]: "FacebookPermission.userGamesActivity",
+        index: 12
+      });
+    },
+    get C13() {
+      return C[13] = dart.const({
+        __proto__: facebook_permission.FacebookPermission.prototype,
+        [_name$]: "FacebookPermission.userGender",
+        index: 13
+      });
+    },
+    get C14() {
+      return C[14] = dart.const({
+        __proto__: facebook_permission.FacebookPermission.prototype,
+        [_name$]: "FacebookPermission.userHometown",
+        index: 14
+      });
+    },
+    get C15() {
+      return C[15] = dart.const({
+        __proto__: facebook_permission.FacebookPermission.prototype,
+        [_name$]: "FacebookPermission.userLikes",
+        index: 15
+      });
+    },
+    get C16() {
+      return C[16] = dart.const({
+        __proto__: facebook_permission.FacebookPermission.prototype,
+        [_name$]: "FacebookPermission.userLocation",
+        index: 16
+      });
+    },
+    get C17() {
+      return C[17] = dart.const({
+        __proto__: facebook_permission.FacebookPermission.prototype,
+        [_name$]: "FacebookPermission.userManagedGroups",
+        index: 17
+      });
+    },
+    get C18() {
+      return C[18] = dart.const({
+        __proto__: facebook_permission.FacebookPermission.prototype,
+        [_name$]: "FacebookPermission.userPhotos",
+        index: 18
+      });
+    },
+    get C19() {
+      return C[19] = dart.const({
+        __proto__: facebook_permission.FacebookPermission.prototype,
+        [_name$]: "FacebookPermission.userPosts",
+        index: 19
+      });
+    },
+    get C20() {
+      return C[20] = dart.const({
+        __proto__: facebook_permission.FacebookPermission.prototype,
+        [_name$]: "FacebookPermission.userRelationships",
+        index: 20
+      });
+    },
+    get C21() {
+      return C[21] = dart.const({
+        __proto__: facebook_permission.FacebookPermission.prototype,
+        [_name$]: "FacebookPermission.userRelationshipDetails",
+        index: 21
+      });
+    },
+    get C22() {
+      return C[22] = dart.const({
+        __proto__: facebook_permission.FacebookPermission.prototype,
+        [_name$]: "FacebookPermission.userReligionPolitics",
+        index: 22
+      });
+    },
+    get C23() {
+      return C[23] = dart.const({
+        __proto__: facebook_permission.FacebookPermission.prototype,
+        [_name$]: "FacebookPermission.userTaggedPlaces",
+        index: 23
+      });
+    },
+    get C24() {
+      return C[24] = dart.const({
+        __proto__: facebook_permission.FacebookPermission.prototype,
+        [_name$]: "FacebookPermission.userVideos",
+        index: 24
+      });
+    },
+    get C25() {
+      return C[25] = dart.const({
+        __proto__: facebook_permission.FacebookPermission.prototype,
+        [_name$]: "FacebookPermission.userWebsite",
+        index: 25
+      });
+    },
+    get C26() {
+      return C[26] = dart.const({
+        __proto__: facebook_permission.FacebookPermission.prototype,
+        [_name$]: "FacebookPermission.userWorkHistory",
+        index: 26
+      });
+    },
+    get C27() {
+      return C[27] = dart.const({
+        __proto__: facebook_permission.FacebookPermission.prototype,
+        [_name$]: "FacebookPermission.readCustomFriendlists",
+        index: 27
+      });
+    },
+    get C28() {
+      return C[28] = dart.const({
+        __proto__: facebook_permission.FacebookPermission.prototype,
+        [_name$]: "FacebookPermission.readInsights",
+        index: 28
+      });
+    },
+    get C29() {
+      return C[29] = dart.const({
+        __proto__: facebook_permission.FacebookPermission.prototype,
+        [_name$]: "FacebookPermission.readAudienceNetworkInsights",
+        index: 29
+      });
+    },
+    get C30() {
+      return C[30] = dart.const({
+        __proto__: facebook_permission.FacebookPermission.prototype,
+        [_name$]: "FacebookPermission.readPageMailboxes",
+        index: 30
+      });
+    },
+    get C31() {
+      return C[31] = dart.const({
+        __proto__: facebook_permission.FacebookPermission.prototype,
+        [_name$]: "FacebookPermission.pagesShowList",
+        index: 31
+      });
+    },
+    get C32() {
+      return C[32] = dart.const({
+        __proto__: facebook_permission.FacebookPermission.prototype,
+        [_name$]: "FacebookPermission.pagesManageCta",
+        index: 32
+      });
+    },
+    get C33() {
+      return C[33] = dart.const({
+        __proto__: facebook_permission.FacebookPermission.prototype,
+        [_name$]: "FacebookPermission.pagesManagePosts",
+        index: 33
+      });
+    },
+    get C34() {
+      return C[34] = dart.const({
+        __proto__: facebook_permission.FacebookPermission.prototype,
+        [_name$]: "FacebookPermission.pagesReadEngagement",
+        index: 34
+      });
+    },
+    get C35() {
+      return C[35] = dart.const({
+        __proto__: facebook_permission.FacebookPermission.prototype,
+        [_name$]: "FacebookPermission.pagesManageInstantArticles",
+        index: 35
+      });
+    },
+    get C36() {
+      return C[36] = dart.const({
+        __proto__: facebook_permission.FacebookPermission.prototype,
+        [_name$]: "FacebookPermission.adsRead",
+        index: 36
+      });
+    },
+    get C37() {
+      return C[37] = dart.constList([C[0] || CT.C0, C[1] || CT.C1, C[2] || CT.C2, C[3] || CT.C3, C[4] || CT.C4, C[5] || CT.C5, C[6] || CT.C6, C[7] || CT.C7, C[8] || CT.C8, C[9] || CT.C9, C[10] || CT.C10, C[11] || CT.C11, C[12] || CT.C12, C[13] || CT.C13, C[14] || CT.C14, C[15] || CT.C15, C[16] || CT.C16, C[17] || CT.C17, C[18] || CT.C18, C[19] || CT.C19, C[20] || CT.C20, C[21] || CT.C21, C[22] || CT.C22, C[23] || CT.C23, C[24] || CT.C24, C[25] || CT.C25, C[26] || CT.C26, C[27] || CT.C27, C[28] || CT.C28, C[29] || CT.C29, C[30] || CT.C30, C[31] || CT.C31, C[32] || CT.C32, C[33] || CT.C33, C[34] || CT.C34, C[35] || CT.C35, C[36] || CT.C36], T.FacebookPermissionL());
+    }
+  }, false);
+  var C = Array(38).fill(void 0);
+  var I = [
+    "file:///C:/Computer/src/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_login_facebook-1.0.1/lib/src/models/facebook_permission.dart",
+    "package:flutter_login_facebook/src/models/facebook_permission.dart"
+  ];
+  var _name$ = dart.privateName(facebook_permission, "_name");
+  facebook_permission.FacebookPermission = class FacebookPermission extends core.Object {
+    toString() {
+      return this[_name$];
+    }
+  };
+  (facebook_permission.FacebookPermission.new = function(index, _name) {
+    if (index == null) dart.nullFailed(I[0], 6, 6, "index");
+    if (_name == null) dart.nullFailed(I[0], 6, 6, "_name");
+    this.index = index;
+    this[_name$] = _name;
+    ;
+  }).prototype = facebook_permission.FacebookPermission.prototype;
+  dart.addTypeTests(facebook_permission.FacebookPermission);
+  dart.addTypeCaches(facebook_permission.FacebookPermission);
+  dart.setLibraryUri(facebook_permission.FacebookPermission, I[1]);
+  dart.setFieldSignature(facebook_permission.FacebookPermission, () => ({
+    __proto__: dart.getFields(facebook_permission.FacebookPermission.__proto__),
+    index: dart.finalFieldType(core.int),
+    [_name$]: dart.finalFieldType(core.String)
+  }));
+  dart.defineExtensionMethods(facebook_permission.FacebookPermission, ['toString']);
+  facebook_permission.FacebookPermission.publicProfile = C[0] || CT.C0;
+  facebook_permission.FacebookPermission.userFriends = C[1] || CT.C1;
+  facebook_permission.FacebookPermission.email = C[2] || CT.C2;
+  facebook_permission.FacebookPermission.userAboutMe = C[3] || CT.C3;
+  facebook_permission.FacebookPermission.userActionsBooks = C[4] || CT.C4;
+  facebook_permission.FacebookPermission.userActionsFitness = C[5] || CT.C5;
+  facebook_permission.FacebookPermission.userActionsMusic = C[6] || CT.C6;
+  facebook_permission.FacebookPermission.userActionsNews = C[7] || CT.C7;
+  facebook_permission.FacebookPermission.userActionsVideo = C[8] || CT.C8;
+  facebook_permission.FacebookPermission.userBirthday = C[9] || CT.C9;
+  facebook_permission.FacebookPermission.userEducationHistory = C[10] || CT.C10;
+  facebook_permission.FacebookPermission.userEvents = C[11] || CT.C11;
+  facebook_permission.FacebookPermission.userGamesActivity = C[12] || CT.C12;
+  facebook_permission.FacebookPermission.userGender = C[13] || CT.C13;
+  facebook_permission.FacebookPermission.userHometown = C[14] || CT.C14;
+  facebook_permission.FacebookPermission.userLikes = C[15] || CT.C15;
+  facebook_permission.FacebookPermission.userLocation = C[16] || CT.C16;
+  facebook_permission.FacebookPermission.userManagedGroups = C[17] || CT.C17;
+  facebook_permission.FacebookPermission.userPhotos = C[18] || CT.C18;
+  facebook_permission.FacebookPermission.userPosts = C[19] || CT.C19;
+  facebook_permission.FacebookPermission.userRelationships = C[20] || CT.C20;
+  facebook_permission.FacebookPermission.userRelationshipDetails = C[21] || CT.C21;
+  facebook_permission.FacebookPermission.userReligionPolitics = C[22] || CT.C22;
+  facebook_permission.FacebookPermission.userTaggedPlaces = C[23] || CT.C23;
+  facebook_permission.FacebookPermission.userVideos = C[24] || CT.C24;
+  facebook_permission.FacebookPermission.userWebsite = C[25] || CT.C25;
+  facebook_permission.FacebookPermission.userWorkHistory = C[26] || CT.C26;
+  facebook_permission.FacebookPermission.readCustomFriendlists = C[27] || CT.C27;
+  facebook_permission.FacebookPermission.readInsights = C[28] || CT.C28;
+  facebook_permission.FacebookPermission.readAudienceNetworkInsights = C[29] || CT.C29;
+  facebook_permission.FacebookPermission.readPageMailboxes = C[30] || CT.C30;
+  facebook_permission.FacebookPermission.pagesShowList = C[31] || CT.C31;
+  facebook_permission.FacebookPermission.pagesManageCta = C[32] || CT.C32;
+  facebook_permission.FacebookPermission.pagesManagePosts = C[33] || CT.C33;
+  facebook_permission.FacebookPermission.pagesReadEngagement = C[34] || CT.C34;
+  facebook_permission.FacebookPermission.pagesManageInstantArticles = C[35] || CT.C35;
+  facebook_permission.FacebookPermission.adsRead = C[36] || CT.C36;
+  facebook_permission.FacebookPermission.values = C[37] || CT.C37;
+  facebook_permission['FacebookPermissionExtension|get#name'] = function FacebookPermissionExtension$124get$35name($this) {
+    if ($this == null) dart.nullFailed(I[0], 130, 14, "#this");
+    return dart.nullCheck(facebook_permission._mapToString[$_get]($this));
+  };
+  dart.defineLazy(facebook_permission, {
+    /*facebook_permission._mapToString*/get _mapToString() {
+      return new (T.LinkedMapOfFacebookPermission$String()).from([facebook_permission.FacebookPermission.publicProfile, "public_profile", facebook_permission.FacebookPermission.userFriends, "user_friends", facebook_permission.FacebookPermission.email, "email", facebook_permission.FacebookPermission.userAboutMe, "user_about_me", facebook_permission.FacebookPermission.userActionsBooks, "user_actions.books", facebook_permission.FacebookPermission.userActionsFitness, "user_action.fitness", facebook_permission.FacebookPermission.userActionsMusic, "user_actions.music", facebook_permission.FacebookPermission.userActionsNews, "user_actions.news", facebook_permission.FacebookPermission.userActionsVideo, "user_actions.video", facebook_permission.FacebookPermission.userBirthday, "user_birthday", facebook_permission.FacebookPermission.userEducationHistory, "user_education_history", facebook_permission.FacebookPermission.userEvents, "user_events", facebook_permission.FacebookPermission.userGamesActivity, "user_games_activity", facebook_permission.FacebookPermission.userGender, "user_gender", facebook_permission.FacebookPermission.userHometown, "user_hometown", facebook_permission.FacebookPermission.userLikes, "user_likes", facebook_permission.FacebookPermission.userLocation, "user_location", facebook_permission.FacebookPermission.userManagedGroups, "user_managed_groups", facebook_permission.FacebookPermission.userPhotos, "user_photos", facebook_permission.FacebookPermission.userPosts, "user_posts", facebook_permission.FacebookPermission.userRelationships, "user_relationships", facebook_permission.FacebookPermission.userRelationshipDetails, "user_relationship_details", facebook_permission.FacebookPermission.userReligionPolitics, "user_religion_politics", facebook_permission.FacebookPermission.userTaggedPlaces, "user_tagged_places", facebook_permission.FacebookPermission.userVideos, "user_videos", facebook_permission.FacebookPermission.userWebsite, "user_website", facebook_permission.FacebookPermission.userWorkHistory, "user_work_history", facebook_permission.FacebookPermission.readCustomFriendlists, "read_custom_friendlists", facebook_permission.FacebookPermission.readInsights, "read_insights", facebook_permission.FacebookPermission.readAudienceNetworkInsights, "read_audience_network_insights", facebook_permission.FacebookPermission.readPageMailboxes, "read_page_mailboxes", facebook_permission.FacebookPermission.pagesShowList, "pages_show_list", facebook_permission.FacebookPermission.pagesManageCta, "pages_manage_cta", facebook_permission.FacebookPermission.pagesManagePosts, "pages_manage_posts", facebook_permission.FacebookPermission.pagesReadEngagement, "pages_read_engagement", facebook_permission.FacebookPermission.pagesManageInstantArticles, "pages_manage_instant_articles", facebook_permission.FacebookPermission.adsRead, "ads_read"]);
+    }
+  }, false);
+  dart.trackLibraries("packages/flutter_login_facebook/src/models/facebook_permission.dart", {
+    "package:flutter_login_facebook/src/models/facebook_permission.dart": facebook_permission
+  }, {
+  }, '{"version":3,"sourceRoot":"","sources":["facebook_permission.dart"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;IA6HA;;;QAxHK;;;;;EAwHL;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AAIqB,UAAkB,gBAAlB,AAAY;EAAO;;MAGlC,gCAAY;YAAG,sDACA,sDAAe,kBACf,oDAAa,gBACb,8CAAO,SACP,oDAAa,iBACb,yDAAkB,sBAClB,2DAAoB,uBACpB,yDAAkB,sBAClB,wDAAiB,qBACjB,yDAAkB,sBAClB,qDAAc,iBACd,6DAAsB,0BACtB,mDAAY,eACZ,0DAAmB,uBACnB,mDAAY,eACZ,qDAAc,iBACd,kDAAW,cACX,qDAAc,iBACd,0DAAmB,uBACnB,mDAAY,eACZ,kDAAW,cACX,0DAAmB,sBACnB,gEAAyB,6BACzB,6DAAsB,0BACtB,yDAAkB,sBAClB,mDAAY,eACZ,oDAAa,gBACb,wDAAiB,qBACjB,8DAAuB,2BACvB,qDAAc,iBACd,oEACf,kCACe,0DAAmB,uBACnB,sDAAe,mBACf,uDAAgB,oBAChB,yDAAkB,sBAClB,4DAAqB,yBACrB,mEACf,iCACe,gDAAS","file":"../../../../../../../../../../packages/flutter_login_facebook/src/models/facebook_permission.dart.lib.js"}');
+  // Exports:
+  return {
+    src__models__facebook_permission: facebook_permission
+  };
+}));
+
+//# sourceMappingURL=facebook_permission.dart.lib.js.map

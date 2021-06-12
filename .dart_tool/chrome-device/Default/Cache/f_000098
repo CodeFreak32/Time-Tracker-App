@@ -1,0 +1,593 @@
+define(['dart_sdk', 'packages/provider/src/provider.dart', 'packages/time_tracker_flutter_course/services/database.dart', 'packages/flutter/src/widgets/widget_span.dart', 'packages/flutter/src/cupertino/route.dart', 'packages/time_tracker_flutter_course/common_widgets/show_exception_alert_dialog.dart', 'packages/firebase_core_platform_interface/firebase_core_platform_interface.dart', 'packages/flutter/src/widgets/async.dart', 'packages/time_tracker_flutter_course/app/home/models/job.dart', 'packages/flutter/src/material/icon_button.dart', 'packages/flutter/src/widgets/icon.dart', 'packages/flutter/src/material/icons.dart', 'packages/flutter/src/material/colors.dart', 'packages/time_tracker_flutter_course/app/home/jobs/edit_job_page.dart', 'packages/time_tracker_flutter_course/app/home/job_entries/entry_page.dart', 'packages/time_tracker_flutter_course/app/home/models/entry.dart', 'packages/time_tracker_flutter_course/app/home/jobs/list_items_builder.dart', 'packages/time_tracker_flutter_course/app/home/job_entries/entry_list_item.dart', 'packages/flutter/src/foundation/key.dart'], (function load__packages__time_tracker_flutter_course__app__home__job_entries__job_entries_page_dart(dart_sdk, packages__provider__src__provider$46dart, packages__time_tracker_flutter_course__services__database$46dart, packages__flutter__src__widgets__widget_span$46dart, packages__flutter__src__cupertino__route$46dart, packages__time_tracker_flutter_course__common_widgets__show_exception_alert_dialog$46dart, packages__firebase_core_platform_interface__firebase_core_platform_interface$46dart, packages__flutter__src__widgets__async$46dart, packages__time_tracker_flutter_course__app__home__models__job$46dart, packages__flutter__src__material__icon_button$46dart, packages__flutter__src__widgets__icon$46dart, packages__flutter__src__material__icons$46dart, packages__flutter__src__material__colors$46dart, packages__time_tracker_flutter_course__app__home__jobs__edit_job_page$46dart, packages__time_tracker_flutter_course__app__home__job_entries__entry_page$46dart, packages__time_tracker_flutter_course__app__home__models__entry$46dart, packages__time_tracker_flutter_course__app__home__jobs__list_items_builder$46dart, packages__time_tracker_flutter_course__app__home__job_entries__entry_list_item$46dart, packages__flutter__src__foundation__key$46dart) {
+  'use strict';
+  const core = dart_sdk.core;
+  const async = dart_sdk.async;
+  const _interceptors = dart_sdk._interceptors;
+  const dart = dart_sdk.dart;
+  const dartx = dart_sdk.dartx;
+  const provider = packages__provider__src__provider$46dart.src__provider;
+  const database = packages__time_tracker_flutter_course__services__database$46dart.services__database;
+  const navigator = packages__flutter__src__widgets__widget_span$46dart.src__widgets__navigator;
+  const widget_inspector = packages__flutter__src__widgets__widget_span$46dart.src__widgets__widget_inspector;
+  const framework = packages__flutter__src__widgets__widget_span$46dart.src__widgets__framework;
+  const text = packages__flutter__src__widgets__widget_span$46dart.src__widgets__text;
+  const route = packages__flutter__src__cupertino__route$46dart.src__cupertino__route;
+  const show_exception_alert_dialog = packages__time_tracker_flutter_course__common_widgets__show_exception_alert_dialog$46dart.common_widgets__show_exception_alert_dialog;
+  const firebase_core_platform_interface = packages__firebase_core_platform_interface__firebase_core_platform_interface$46dart.firebase_core_platform_interface;
+  const async$ = packages__flutter__src__widgets__async$46dart.src__widgets__async;
+  const job = packages__time_tracker_flutter_course__app__home__models__job$46dart.app__home__models__job;
+  const scaffold = packages__flutter__src__material__icon_button$46dart.src__material__scaffold;
+  const app_bar = packages__flutter__src__material__icon_button$46dart.src__material__app_bar;
+  const icon_button = packages__flutter__src__material__icon_button$46dart.src__material__icon_button;
+  const icon = packages__flutter__src__widgets__icon$46dart.src__widgets__icon;
+  const icons = packages__flutter__src__material__icons$46dart.src__material__icons;
+  const colors = packages__flutter__src__material__colors$46dart.src__material__colors;
+  const edit_job_page = packages__time_tracker_flutter_course__app__home__jobs__edit_job_page$46dart.app__home__jobs__edit_job_page;
+  const entry_page = packages__time_tracker_flutter_course__app__home__job_entries__entry_page$46dart.app__home__job_entries__entry_page;
+  const entry = packages__time_tracker_flutter_course__app__home__models__entry$46dart.app__home__models__entry;
+  const list_items_builder = packages__time_tracker_flutter_course__app__home__jobs__list_items_builder$46dart.app__home__jobs__list_items_builder;
+  const entry_list_item = packages__time_tracker_flutter_course__app__home__job_entries__entry_list_item$46dart.app__home__job_entries__entry_list_item;
+  const key = packages__flutter__src__foundation__key$46dart.src__foundation__key;
+  var job_entries_page = Object.create(dart.library);
+  dart._checkModuleNullSafetyMode(false);
+  var T = {
+    DatabaseL: () => (T.DatabaseL = dart.constFn(dart.legacy(database.Database)))(),
+    _LocationL: () => (T._LocationL = dart.constFn(dart.legacy(widget_inspector._Location)))(),
+    JobEntriesPageL: () => (T.JobEntriesPageL = dart.constFn(dart.legacy(job_entries_page.JobEntriesPage)))(),
+    BuildContextL: () => (T.BuildContextL = dart.constFn(dart.legacy(framework.BuildContext)))(),
+    BuildContextLToJobEntriesPageL: () => (T.BuildContextLToJobEntriesPageL = dart.constFn(dart.fnType(T.JobEntriesPageL(), [T.BuildContextL()])))(),
+    FirebaseExceptionL: () => (T.FirebaseExceptionL = dart.constFn(dart.legacy(firebase_core_platform_interface.FirebaseException)))(),
+    JobL: () => (T.JobL = dart.constFn(dart.legacy(job.Job)))(),
+    StreamBuilderOfJobL: () => (T.StreamBuilderOfJobL = dart.constFn(async$.StreamBuilder$(T.JobL())))(),
+    FutureOfvoid: () => (T.FutureOfvoid = dart.constFn(async.Future$(dart.void)))(),
+    FutureLOfvoid: () => (T.FutureLOfvoid = dart.constFn(dart.legacy(T.FutureOfvoid())))(),
+    VoidToFutureLOfvoid: () => (T.VoidToFutureLOfvoid = dart.constFn(dart.fnType(T.FutureLOfvoid(), [])))(),
+    WidgetL: () => (T.WidgetL = dart.constFn(dart.legacy(framework.Widget)))(),
+    JSArrayOfWidgetL: () => (T.JSArrayOfWidgetL = dart.constFn(_interceptors.JSArray$(T.WidgetL())))(),
+    ScaffoldL: () => (T.ScaffoldL = dart.constFn(dart.legacy(scaffold.Scaffold)))(),
+    AsyncSnapshotOfJobL: () => (T.AsyncSnapshotOfJobL = dart.constFn(async$.AsyncSnapshot$(T.JobL())))(),
+    AsyncSnapshotLOfJobL: () => (T.AsyncSnapshotLOfJobL = dart.constFn(dart.legacy(T.AsyncSnapshotOfJobL())))(),
+    BuildContextLAndAsyncSnapshotLOfJobLToScaffoldL: () => (T.BuildContextLAndAsyncSnapshotLOfJobLToScaffoldL = dart.constFn(dart.fnType(T.ScaffoldL(), [T.BuildContextL(), T.AsyncSnapshotLOfJobL()])))(),
+    EntryL: () => (T.EntryL = dart.constFn(dart.legacy(entry.Entry)))(),
+    ListOfEntryL: () => (T.ListOfEntryL = dart.constFn(core.List$(T.EntryL())))(),
+    ListLOfEntryL: () => (T.ListLOfEntryL = dart.constFn(dart.legacy(T.ListOfEntryL())))(),
+    StreamBuilderOfListLOfEntryL: () => (T.StreamBuilderOfListLOfEntryL = dart.constFn(async$.StreamBuilder$(T.ListLOfEntryL())))(),
+    ListItemsBuilderOfEntryL: () => (T.ListItemsBuilderOfEntryL = dart.constFn(list_items_builder.ListItemsBuilder$(T.EntryL())))(),
+    ValueKeyOfString: () => (T.ValueKeyOfString = dart.constFn(key.ValueKey$(core.String)))(),
+    DismissibleEntryListItemL: () => (T.DismissibleEntryListItemL = dart.constFn(dart.legacy(entry_list_item.DismissibleEntryListItem)))(),
+    BuildContextLAndEntryLToDismissibleEntryListItemL: () => (T.BuildContextLAndEntryLToDismissibleEntryListItemL = dart.constFn(dart.fnType(T.DismissibleEntryListItemL(), [T.BuildContextL(), T.EntryL()])))(),
+    ListItemsBuilderLOfEntryL: () => (T.ListItemsBuilderLOfEntryL = dart.constFn(dart.legacy(T.ListItemsBuilderOfEntryL())))(),
+    AsyncSnapshotOfListLOfEntryL: () => (T.AsyncSnapshotOfListLOfEntryL = dart.constFn(async$.AsyncSnapshot$(T.ListLOfEntryL())))(),
+    AsyncSnapshotLOfListLOfEntryL: () => (T.AsyncSnapshotLOfListLOfEntryL = dart.constFn(dart.legacy(T.AsyncSnapshotOfListLOfEntryL())))(),
+    BuildContextLAndAsyncSnapshotLOfListLOfEntryLToListItemsBuilderLOfEntryL: () => (T.BuildContextLAndAsyncSnapshotLOfListLOfEntryLToListItemsBuilderLOfEntryL = dart.constFn(dart.fnType(T.ListItemsBuilderLOfEntryL(), [T.BuildContextL(), T.AsyncSnapshotLOfListLOfEntryL()])))()
+  };
+  const CT = Object.create({
+    _: () => (C, CT)
+  });
+  dart.defineLazy(CT, {
+    get C2() {
+      return C[2] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "database",
+        [_Location_column]: 46,
+        [_Location_line]: 27,
+        [_Location_file]: null
+      });
+    },
+    get C3() {
+      return C[3] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "job",
+        [_Location_column]: 66,
+        [_Location_line]: 27,
+        [_Location_file]: null
+      });
+    },
+    get C1() {
+      return C[1] = dart.constList([C[2] || CT.C2, C[3] || CT.C3], T._LocationL());
+    },
+    get C0() {
+      return C[0] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[1] || CT.C1,
+        [_Location_name]: null,
+        [_Location_column]: 31,
+        [_Location_line]: 27,
+        [_Location_file]: "file:///C:/Computer/project/time_tracker_flutter_course/lib/app/home/job_entries/job_entries_page.dart"
+      });
+    },
+    get C6() {
+      return C[6] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 27,
+        [_Location_line]: 54,
+        [_Location_file]: null
+      });
+    },
+    get C5() {
+      return C[5] = dart.constList([C[6] || CT.C6], T._LocationL());
+    },
+    get C4() {
+      return C[4] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[5] || CT.C5,
+        [_Location_name]: null,
+        [_Location_column]: 22,
+        [_Location_line]: 54,
+        [_Location_file]: "file:///C:/Computer/project/time_tracker_flutter_course/lib/app/home/job_entries/job_entries_page.dart"
+      });
+    },
+    get C9() {
+      return C[9] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "icon",
+        [_Location_column]: 36,
+        [_Location_line]: 58,
+        [_Location_file]: null
+      });
+    },
+    get C10() {
+      return C[10] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "color",
+        [_Location_column]: 42,
+        [_Location_line]: 58,
+        [_Location_file]: null
+      });
+    },
+    get C8() {
+      return C[8] = dart.constList([C[9] || CT.C9, C[10] || CT.C10], T._LocationL());
+    },
+    get C7() {
+      return C[7] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[8] || CT.C8,
+        [_Location_name]: null,
+        [_Location_column]: 25,
+        [_Location_line]: 58,
+        [_Location_file]: "file:///C:/Computer/project/time_tracker_flutter_course/lib/app/home/job_entries/job_entries_page.dart"
+      });
+    },
+    get C13() {
+      return C[13] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "icon",
+        [_Location_column]: 19,
+        [_Location_line]: 58,
+        [_Location_file]: null
+      });
+    },
+    get C14() {
+      return C[14] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onPressed",
+        [_Location_column]: 19,
+        [_Location_line]: 59,
+        [_Location_file]: null
+      });
+    },
+    get C12() {
+      return C[12] = dart.constList([C[13] || CT.C13, C[14] || CT.C14], T._LocationL());
+    },
+    get C11() {
+      return C[11] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[12] || CT.C12,
+        [_Location_name]: null,
+        [_Location_column]: 17,
+        [_Location_line]: 57,
+        [_Location_file]: "file:///C:/Computer/project/time_tracker_flutter_course/lib/app/home/job_entries/job_entries_page.dart"
+      });
+    },
+    get C17() {
+      return C[17] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "icon",
+        [_Location_column]: 36,
+        [_Location_line]: 66,
+        [_Location_file]: null
+      });
+    },
+    get C18() {
+      return C[18] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "color",
+        [_Location_column]: 41,
+        [_Location_line]: 66,
+        [_Location_file]: null
+      });
+    },
+    get C16() {
+      return C[16] = dart.constList([C[17] || CT.C17, C[18] || CT.C18], T._LocationL());
+    },
+    get C15() {
+      return C[15] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[16] || CT.C16,
+        [_Location_name]: null,
+        [_Location_column]: 25,
+        [_Location_line]: 66,
+        [_Location_file]: "file:///C:/Computer/project/time_tracker_flutter_course/lib/app/home/job_entries/job_entries_page.dart"
+      });
+    },
+    get C21() {
+      return C[21] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "icon",
+        [_Location_column]: 19,
+        [_Location_line]: 66,
+        [_Location_file]: null
+      });
+    },
+    get C22() {
+      return C[22] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onPressed",
+        [_Location_column]: 19,
+        [_Location_line]: 67,
+        [_Location_file]: null
+      });
+    },
+    get C20() {
+      return C[20] = dart.constList([C[21] || CT.C21, C[22] || CT.C22], T._LocationL());
+    },
+    get C19() {
+      return C[19] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[20] || CT.C20,
+        [_Location_name]: null,
+        [_Location_column]: 17,
+        [_Location_line]: 65,
+        [_Location_file]: "file:///C:/Computer/project/time_tracker_flutter_course/lib/app/home/job_entries/job_entries_page.dart"
+      });
+    },
+    get C25() {
+      return C[25] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "elevation",
+        [_Location_column]: 15,
+        [_Location_line]: 53,
+        [_Location_file]: null
+      });
+    },
+    get C26() {
+      return C[26] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "title",
+        [_Location_column]: 15,
+        [_Location_line]: 54,
+        [_Location_file]: null
+      });
+    },
+    get C27() {
+      return C[27] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "centerTitle",
+        [_Location_column]: 15,
+        [_Location_line]: 55,
+        [_Location_file]: null
+      });
+    },
+    get C28() {
+      return C[28] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "actions",
+        [_Location_column]: 15,
+        [_Location_line]: 56,
+        [_Location_file]: null
+      });
+    },
+    get C24() {
+      return C[24] = dart.constList([C[25] || CT.C25, C[26] || CT.C26, C[27] || CT.C27, C[28] || CT.C28], T._LocationL());
+    },
+    get C23() {
+      return C[23] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[24] || CT.C24,
+        [_Location_name]: null,
+        [_Location_column]: 21,
+        [_Location_line]: 52,
+        [_Location_file]: "file:///C:/Computer/project/time_tracker_flutter_course/lib/app/home/job_entries/job_entries_page.dart"
+      });
+    },
+    get C31() {
+      return C[31] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "appBar",
+        [_Location_column]: 13,
+        [_Location_line]: 52,
+        [_Location_file]: null
+      });
+    },
+    get C32() {
+      return C[32] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "body",
+        [_Location_column]: 13,
+        [_Location_line]: 75,
+        [_Location_file]: null
+      });
+    },
+    get C30() {
+      return C[30] = dart.constList([C[31] || CT.C31, C[32] || CT.C32], T._LocationL());
+    },
+    get C29() {
+      return C[29] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[30] || CT.C30,
+        [_Location_name]: null,
+        [_Location_column]: 18,
+        [_Location_line]: 51,
+        [_Location_file]: "file:///C:/Computer/project/time_tracker_flutter_course/lib/app/home/job_entries/job_entries_page.dart"
+      });
+    },
+    get C35() {
+      return C[35] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "stream",
+        [_Location_column]: 9,
+        [_Location_line]: 47,
+        [_Location_file]: null
+      });
+    },
+    get C36() {
+      return C[36] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "builder",
+        [_Location_column]: 9,
+        [_Location_line]: 48,
+        [_Location_file]: null
+      });
+    },
+    get C34() {
+      return C[34] = dart.constList([C[35] || CT.C35, C[36] || CT.C36], T._LocationL());
+    },
+    get C33() {
+      return C[33] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[34] || CT.C34,
+        [_Location_name]: null,
+        [_Location_column]: 12,
+        [_Location_line]: 46,
+        [_Location_file]: "file:///C:/Computer/project/time_tracker_flutter_course/lib/app/home/job_entries/job_entries_page.dart"
+      });
+    },
+    get C39() {
+      return C[39] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "key",
+        [_Location_column]: 15,
+        [_Location_line]: 88,
+        [_Location_file]: null
+      });
+    },
+    get C40() {
+      return C[40] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "entry",
+        [_Location_column]: 15,
+        [_Location_line]: 89,
+        [_Location_file]: null
+      });
+    },
+    get C41() {
+      return C[41] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "job",
+        [_Location_column]: 15,
+        [_Location_line]: 90,
+        [_Location_file]: null
+      });
+    },
+    get C42() {
+      return C[42] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onDismissed",
+        [_Location_column]: 15,
+        [_Location_line]: 91,
+        [_Location_file]: null
+      });
+    },
+    get C43() {
+      return C[43] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onTap",
+        [_Location_column]: 15,
+        [_Location_line]: 92,
+        [_Location_file]: null
+      });
+    },
+    get C38() {
+      return C[38] = dart.constList([C[39] || CT.C39, C[40] || CT.C40, C[41] || CT.C41, C[42] || CT.C42, C[43] || CT.C43], T._LocationL());
+    },
+    get C37() {
+      return C[37] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[38] || CT.C38,
+        [_Location_name]: null,
+        [_Location_column]: 20,
+        [_Location_line]: 87,
+        [_Location_file]: "file:///C:/Computer/project/time_tracker_flutter_course/lib/app/home/job_entries/job_entries_page.dart"
+      });
+    },
+    get C46() {
+      return C[46] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "snapshot",
+        [_Location_column]: 11,
+        [_Location_line]: 85,
+        [_Location_file]: null
+      });
+    },
+    get C47() {
+      return C[47] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "itemBuilder",
+        [_Location_column]: 11,
+        [_Location_line]: 86,
+        [_Location_file]: null
+      });
+    },
+    get C45() {
+      return C[45] = dart.constList([C[46] || CT.C46, C[47] || CT.C47], T._LocationL());
+    },
+    get C44() {
+      return C[44] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[45] || CT.C45,
+        [_Location_name]: null,
+        [_Location_column]: 16,
+        [_Location_line]: 84,
+        [_Location_file]: "file:///C:/Computer/project/time_tracker_flutter_course/lib/app/home/job_entries/job_entries_page.dart"
+      });
+    },
+    get C50() {
+      return C[50] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "stream",
+        [_Location_column]: 7,
+        [_Location_line]: 82,
+        [_Location_file]: null
+      });
+    },
+    get C51() {
+      return C[51] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "builder",
+        [_Location_column]: 7,
+        [_Location_line]: 83,
+        [_Location_file]: null
+      });
+    },
+    get C49() {
+      return C[49] = dart.constList([C[50] || CT.C50, C[51] || CT.C51], T._LocationL());
+    },
+    get C48() {
+      return C[48] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[49] || CT.C49,
+        [_Location_name]: null,
+        [_Location_column]: 12,
+        [_Location_line]: 81,
+        [_Location_file]: "file:///C:/Computer/project/time_tracker_flutter_course/lib/app/home/job_entries/job_entries_page.dart"
+      });
+    }
+  }, false);
+  var C = Array(52).fill(void 0);
+  var I = ["package:time_tracker_flutter_course/app/home/job_entries/job_entries_page.dart"];
+  var database$ = dart.privateName(job_entries_page, "JobEntriesPage.database");
+  var job$ = dart.privateName(job_entries_page, "JobEntriesPage.job");
+  var _Location_parameterLocations = dart.privateName(widget_inspector, "_Location.parameterLocations");
+  var _Location_name = dart.privateName(widget_inspector, "_Location.name");
+  var _Location_column = dart.privateName(widget_inspector, "_Location.column");
+  var _Location_line = dart.privateName(widget_inspector, "_Location.line");
+  var _Location_file = dart.privateName(widget_inspector, "_Location.file");
+  var _deleteEntry = dart.privateName(job_entries_page, "_deleteEntry");
+  var _buildContent = dart.privateName(job_entries_page, "_buildContent");
+  job_entries_page.JobEntriesPage = class JobEntriesPage extends framework.StatelessWidget {
+    get database() {
+      return this[database$];
+    }
+    set database(value) {
+      super.database = value;
+    }
+    get job() {
+      return this[job$];
+    }
+    set job(value) {
+      super.job = value;
+    }
+    static show(context, job) {
+      return async.async(dart.void, function* show() {
+        let database = provider.Provider.of(T.DatabaseL(), context, {listen: false});
+        yield navigator.Navigator.of(context).push(dart.dynamic, new route.CupertinoPageRoute.new({fullscreenDialog: false, builder: dart.fn(context => new job_entries_page.JobEntriesPage.new({database: database, job: job, $creationLocationd_0dea112b090073317d4: C[0] || CT.C0}), T.BuildContextLToJobEntriesPageL())}));
+      });
+    }
+    [_deleteEntry](context, entry) {
+      return async.async(dart.void, (function* _deleteEntry() {
+        try {
+          yield this.database.deleteEntry(entry);
+        } catch (e$) {
+          let e = dart.getThrown(e$);
+          if (T.FirebaseExceptionL().is(e)) {
+            show_exception_alert_dialog.showExceptionAlertDialog(context, {title: "Operation failed", exception: e});
+          } else
+            throw e$;
+        }
+      }).bind(this));
+    }
+    build(context) {
+      return new (T.StreamBuilderOfJobL()).new({stream: this.database.jobStream({jobId: this.job.id}), builder: dart.fn((context, snapshot) => {
+          let t1, t1$;
+          let job = snapshot.data;
+          let jobName = (t1$ = (t1 = job, t1 == null ? null : t1.name), t1$ == null ? "" : t1$);
+          return new scaffold.Scaffold.new({appBar: new app_bar.AppBar.new({elevation: 2.0, title: new text.Text.new(jobName, {$creationLocationd_0dea112b090073317d4: C[4] || CT.C4}), centerTitle: true, actions: T.JSArrayOfWidgetL().of([new icon_button.IconButton.new({icon: new icon.Icon.new(icons.Icons.edit, {color: colors.Colors.white, $creationLocationd_0dea112b090073317d4: C[7] || CT.C7}), onPressed: dart.fn(() => edit_job_page.EditJobPage.show(context, {database: this.database, job: job}), T.VoidToFutureLOfvoid()), $creationLocationd_0dea112b090073317d4: C[11] || CT.C11}), new icon_button.IconButton.new({icon: new icon.Icon.new(icons.Icons.add, {color: colors.Colors.white, $creationLocationd_0dea112b090073317d4: C[15] || CT.C15}), onPressed: dart.fn(() => entry_page.EntryPage.show({context: context, database: this.database, job: job}), T.VoidToFutureLOfvoid()), $creationLocationd_0dea112b090073317d4: C[19] || CT.C19})]), $creationLocationd_0dea112b090073317d4: C[23] || CT.C23}), body: this[_buildContent](context, job), $creationLocationd_0dea112b090073317d4: C[29] || CT.C29});
+        }, T.BuildContextLAndAsyncSnapshotLOfJobLToScaffoldL()), $creationLocationd_0dea112b090073317d4: C[33] || CT.C33});
+    }
+    [_buildContent](context, job) {
+      return new (T.StreamBuilderOfListLOfEntryL()).new({stream: this.database.entriesStream({job: job}), builder: dart.fn((context, snapshot) => new (T.ListItemsBuilderOfEntryL()).new({snapshot: snapshot, itemBuilder: dart.fn((context, entry) => new entry_list_item.DismissibleEntryListItem.new({key: new (T.ValueKeyOfString()).new("entry-" + dart.str(entry.id)), entry: entry, job: job, onDismissed: dart.fn(() => this[_deleteEntry](context, entry), T.VoidToFutureLOfvoid()), onTap: dart.fn(() => entry_page.EntryPage.show({context: context, database: this.database, job: job, entry: entry}), T.VoidToFutureLOfvoid()), $creationLocationd_0dea112b090073317d4: C[37] || CT.C37}), T.BuildContextLAndEntryLToDismissibleEntryListItemL()), $creationLocationd_0dea112b090073317d4: C[44] || CT.C44}), T.BuildContextLAndAsyncSnapshotLOfListLOfEntryLToListItemsBuilderLOfEntryL()), $creationLocationd_0dea112b090073317d4: C[48] || CT.C48});
+    }
+  };
+  (job_entries_page.JobEntriesPage.new = function(opts) {
+    let database = opts && 'database' in opts ? opts.database : null;
+    let job = opts && 'job' in opts ? opts.job : null;
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    this[database$] = database;
+    this[job$] = job;
+    job_entries_page.JobEntriesPage.__proto__.new.call(this, {$creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+    ;
+  }).prototype = job_entries_page.JobEntriesPage.prototype;
+  dart.addTypeTests(job_entries_page.JobEntriesPage);
+  dart.addTypeCaches(job_entries_page.JobEntriesPage);
+  dart.setMethodSignature(job_entries_page.JobEntriesPage, () => ({
+    __proto__: dart.getMethods(job_entries_page.JobEntriesPage.__proto__),
+    [_deleteEntry]: dart.fnType(dart.legacy(async.Future$(dart.void)), [dart.legacy(framework.BuildContext), dart.legacy(entry.Entry)]),
+    build: dart.fnType(dart.legacy(framework.Widget), [dart.legacy(framework.BuildContext)]),
+    [_buildContent]: dart.fnType(dart.legacy(framework.Widget), [dart.legacy(framework.BuildContext), dart.legacy(job.Job)])
+  }));
+  dart.setLibraryUri(job_entries_page.JobEntriesPage, I[0]);
+  dart.setFieldSignature(job_entries_page.JobEntriesPage, () => ({
+    __proto__: dart.getFields(job_entries_page.JobEntriesPage.__proto__),
+    database: dart.finalFieldType(dart.legacy(database.Database)),
+    job: dart.finalFieldType(dart.legacy(job.Job))
+  }));
+  dart.trackLibraries("packages/time_tracker_flutter_course/app/home/job_entries/job_entries_page.dart", {
+    "package:time_tracker_flutter_course/app/home/job_entries/job_entries_page.dart": job_entries_page
+  }, {
+  }, '{"version":3,"sourceRoot":"","sources":["job_entries_page.dart"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;IAkBiB;;;;;;IACL;;;;;;gBAE4B,SAAa;AAA3B;AAChB,uBAAoB,oCAAa,OAAO,WAAU;AAMvD,QALD,MAAgB,AAAY,uBAAT,OAAO,qBACxB,oDACoB,gBACT,QAAC,WAAY,mDAAyB,QAAQ,OAAO,GAAG;MAGvE;;mBAEuC,SAAe;AAA7B;AACvB;AACmC,UAAjC,MAAM,AAAS,0BAAY,KAAK;;cACJ;AAA5B;AAKC,YAJD,qDACE,OAAO,UACA,+BACI,CAAC;;;;MAGlB;;UAG0B;AACxB,YAAO,4CACK,AAAS,gCAAiB,AAAI,wBAC7B,SAAC,SAAS;;AACX,oBAAM,AAAS,QAAD;AACd,yBAAoB,YAAV,GAAG,eAAH,OAAK,UAAL,cAAa;AAC7B,gBAAO,oCACG,mCACK,YACJ,kBAAK,OAAO,yEACN,eACI,yBACf,sCACQ,kBAAW,0BAAoB,yFAC1B,cAAkB,+BAC3B,OAAO,aACG,oBACL,GAAG,yFAGZ,sCACQ,kBAAW,yBAAmB,2FACzB,cAAgB,oCAChB,OAAO,YACN,oBACL,GAAG,4JAKV,oBAAc,OAAO,EAAE,GAAG;;IAG1C;oBAEkC,SAAa;AAC7C,YAAO,qDACG,AAAS,kCAAmB,GAAG,aAC9B,SAAC,SAAS,aACV,kDACK,QAAQ,eACL,SAAC,SAAS,UACd,uDACA,+BAAI,AAAmB,oBAAV,AAAM,KAAD,cAChB,KAAK,OACP,GAAG,eACK,cAAM,mBAAa,OAAO,EAAE,KAAK,oCACvC,cAAgB,oCACZ,OAAO,YACN,oBACL,GAAG,SACD,KAAK;IAO1B;;;QArFqC;QAAyB;;IAAzB;IAAyB;AAAxD;;EAA6D","file":"../../../../../../../packages/time_tracker_flutter_course/app/home/job_entries/job_entries_page.dart.lib.js"}');
+  // Exports:
+  return {
+    app__home__job_entries__job_entries_page: job_entries_page
+  };
+}));
+
+//# sourceMappingURL=job_entries_page.dart.lib.js.map

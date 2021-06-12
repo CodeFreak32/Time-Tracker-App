@@ -1,0 +1,389 @@
+define(['dart_sdk', 'packages/quiver/src/iterables/partition.dart', 'packages/list_ext/src/interables.dart', 'packages/collection/src/equality.dart'], (function load__packages__list_ext__src__interable_extensions_dart(dart_sdk, packages__quiver__src__iterables__partition$46dart, packages__list_ext__src__interables$46dart, packages__collection__src__equality$46dart) {
+  'use strict';
+  const core = dart_sdk.core;
+  const _interceptors = dart_sdk._interceptors;
+  const _js_helper = dart_sdk._js_helper;
+  const math = dart_sdk.math;
+  const dart = dart_sdk.dart;
+  const dartx = dart_sdk.dartx;
+  const partition = packages__quiver__src__iterables__partition$46dart.src__iterables__partition;
+  const interables = packages__list_ext__src__interables$46dart.src__interables;
+  const equality = packages__collection__src__equality$46dart.src__equality;
+  var interable_extensions = Object.create(dart.library);
+  var $fold = dartx.fold;
+  var $contains = dartx.contains;
+  var $isEmpty = dartx.isEmpty;
+  var $first = dartx.first;
+  var $elementAt = dartx.elementAt;
+  var $iterator = dartx.iterator;
+  var $_set = dartx._set;
+  var $length = dartx.length;
+  var $isNotEmpty = dartx.isNotEmpty;
+  var $reduce = dartx.reduce;
+  var $_get = dartx._get;
+  dart._checkModuleNullSafetyMode(false);
+  var T$ = {
+    ObjectN: () => (T$.ObjectN = dart.constFn(dart.nullable(core.Object)))(),
+    TAndTToT$1: () => (T$.TAndTToT$1 = dart.constFn(dart.gFnType(T => [T, [T, T]], T => [core.num])))(),
+    TAndTToT$2: () => (T$.TAndTToT$2 = dart.constFn(dart.gFnType(T => [T, [T, T]], T => [core.num])))(),
+    intAndintToint: () => (T$.intAndintToint = dart.constFn(dart.fnType(core.int, [core.int, core.int])))(),
+    VoidToint: () => (T$.VoidToint = dart.constFn(dart.fnType(core.int, [])))(),
+    VoidTodouble: () => (T$.VoidTodouble = dart.constFn(dart.fnType(core.double, [])))(),
+    doubleAnddoubleTodouble: () => (T$.doubleAnddoubleTodouble = dart.constFn(dart.fnType(core.double, [core.double, core.double])))(),
+    LinkedMapOfType$UnorderedIterableEquality: () => (T$.LinkedMapOfType$UnorderedIterableEquality = dart.constFn(_js_helper.LinkedMap$(core.Type, equality.UnorderedIterableEquality)))()
+  };
+  const CT = Object.create({
+    _: () => (C, CT)
+  });
+  dart.defineLazy(CT, {
+    get C0() {
+      return C[0] = dart.fn(math.max, T$.TAndTToT$1());
+    },
+    get C1() {
+      return C[1] = dart.fn(math.min, T$.TAndTToT$2());
+    }
+  }, false);
+  var C = Array(2).fill(void 0);
+  var I = ["file:///C:/Computer/src/flutter/.pub-cache/hosted/pub.dartlang.org/list_ext-1.0.2/lib/src/interable_extensions.dart"];
+  interable_extensions['IterableExtensions|countWhere'] = function IterableExtensions$124countWhere(E, $this, test) {
+    if ($this == null) dart.nullFailed(I[0], 19, 7, "#this");
+    if (test == null) dart.nullFailed(I[0], 19, 35, "test");
+    return $this[$fold](core.int, 0, dart.fn((count, e) => {
+      if (count == null) dart.nullFailed(I[0], 20, 16, "count");
+      return dart.test(test(e)) ? dart.notNull(count) + 1 : count;
+    }, dart.fnType(core.int, [core.int, E])));
+  };
+  interable_extensions['IterableExtensions|get#countWhere'] = function IterableExtensions$124get$35countWhere(E, $this) {
+    if ($this == null) dart.nullFailed(I[0], 19, 7, "#this");
+    return dart.fn(test => {
+      if (test == null) dart.nullFailed(I[0], 19, 35, "test");
+      return interable_extensions['IterableExtensions|countWhere'](E, $this, test);
+    }, dart.fnType(core.int, [dart.fnType(core.bool, [E])]));
+  };
+  interable_extensions['IterableExtensions|containsAll'] = function IterableExtensions$124containsAll(E, $this, elements) {
+    if ($this == null) dart.nullFailed(I[0], 27, 8, "#this");
+    if (elements == null) dart.nullFailed(I[0], 27, 32, "elements");
+    for (let e of elements) {
+      if (!dart.test($this[$contains](e))) return false;
+    }
+    return true;
+  };
+  interable_extensions['IterableExtensions|get#containsAll'] = function IterableExtensions$124get$35containsAll(E, $this) {
+    if ($this == null) dart.nullFailed(I[0], 27, 8, "#this");
+    return dart.fn(elements => {
+      if (elements == null) dart.nullFailed(I[0], 27, 32, "elements");
+      return interable_extensions['IterableExtensions|containsAll'](E, $this, elements);
+    }, dart.fnType(core.bool, [core.Iterable$(E)]));
+  };
+  interable_extensions['IterableExtensions|isUnorderedEquivalent'] = function IterableExtensions$124isUnorderedEquivalent(E, $this, other) {
+    if ($this == null) dart.nullFailed(I[0], 43, 8, "#this");
+    if (other == null) dart.nullFailed(I[0], 43, 42, "other");
+    return interable_extensions._getUnorderedEquality(E).equals($this, other);
+  };
+  interable_extensions['IterableExtensions|get#isUnorderedEquivalent'] = function IterableExtensions$124get$35isUnorderedEquivalent(E, $this) {
+    if ($this == null) dart.nullFailed(I[0], 43, 8, "#this");
+    return dart.fn(other => {
+      if (other == null) dart.nullFailed(I[0], 43, 42, "other");
+      return interable_extensions['IterableExtensions|isUnorderedEquivalent'](E, $this, other);
+    }, dart.fnType(core.bool, [core.Iterable$(E)]));
+  };
+  interable_extensions['IterableExtensions|firstWhereOrNull'] = function IterableExtensions$124firstWhereOrNull(E, $this, test) {
+    if ($this == null) dart.nullFailed(I[0], 52, 6, "#this");
+    if (test == null) dart.nullFailed(I[0], 52, 40, "test");
+    for (let element of $this) {
+      if (dart.test(test(element))) return element;
+    }
+    return null;
+  };
+  interable_extensions['IterableExtensions|get#firstWhereOrNull'] = function IterableExtensions$124get$35firstWhereOrNull(E, $this) {
+    if ($this == null) dart.nullFailed(I[0], 52, 6, "#this");
+    return dart.fn(test => {
+      if (test == null) dart.nullFailed(I[0], 52, 40, "test");
+      return interable_extensions['IterableExtensions|firstWhereOrNull'](E, $this, test);
+    }, dart.fnType(dart.nullable(E), [dart.fnType(core.bool, [E])]));
+  };
+  interable_extensions['IterableExtensions|get#firstOrNull'] = function IterableExtensions$124get$35firstOrNull(E, $this) {
+    if ($this == null) dart.nullFailed(I[0], 63, 10, "#this");
+    return dart.test($this[$isEmpty]) ? null : $this[$first];
+  };
+  interable_extensions['IterableExtensions|tryElementAt'] = function IterableExtensions$124tryElementAt(E, $this, index, opts) {
+    if ($this == null) dart.nullFailed(I[0], 67, 6, "#this");
+    if (index == null) dart.nullFailed(I[0], 67, 23, "index");
+    let orElse = opts && 'orElse' in opts ? opts.orElse : null;
+    try {
+      return $this[$elementAt](index);
+    } catch (e$) {
+      let e = dart.getThrown(e$);
+      if (core.Object.is(e)) {
+        return orElse;
+      } else
+        throw e$;
+    }
+  };
+  interable_extensions['IterableExtensions|get#tryElementAt'] = function IterableExtensions$124get$35tryElementAt(E, $this) {
+    if ($this == null) dart.nullFailed(I[0], 67, 6, "#this");
+    return dart.fn((index, opts) => {
+      if (index == null) dart.nullFailed(I[0], 67, 23, "index");
+      let orElse = opts && 'orElse' in opts ? opts.orElse : null;
+      return interable_extensions['IterableExtensions|tryElementAt'](E, $this, index, {orElse: orElse});
+    }, dart.fnType(dart.nullable(E), [core.int], {orElse: dart.nullable(E)}, {}));
+  };
+  interable_extensions['IterableExtensions|reduceValue'] = function IterableExtensions$124reduceValue(E, T, $this, combine, getVal) {
+    if ($this == null) dart.nullFailed(I[0], 83, 5, "#this");
+    if (combine == null) dart.nullFailed(I[0], 84, 41, "combine");
+    if (getVal == null) dart.nullFailed(I[0], 84, 65, "getVal");
+    let iterator = $this[$iterator];
+    if (!dart.test(iterator.moveNext())) {
+      dart.throw(new core.StateError.new("No element"));
+    }
+    let value = getVal(iterator.current);
+    while (dart.test(iterator.moveNext())) {
+      value = combine(value, getVal(iterator.current));
+    }
+    return value;
+  };
+  interable_extensions['IterableExtensions|get#reduceValue'] = function IterableExtensions$124get$35reduceValue(E, $this) {
+    if ($this == null) dart.nullFailed(I[0], 83, 5, "#this");
+    return dart.fn((T, combine, getVal) => {
+      if (combine == null) dart.nullFailed(I[0], 84, 41, "combine");
+      if (getVal == null) dart.nullFailed(I[0], 84, 65, "getVal");
+      return interable_extensions['IterableExtensions|reduceValue'](E, T, $this, combine, getVal);
+    }, dart.gFnType(T => {
+      var TAndTToT = () => (TAndTToT = dart.constFn(dart.fnType(T, [T, T])))();
+      return [T, [TAndTToT(), dart.fnType(T, [E])]];
+    }, T => {
+      var TAndTToT = () => (TAndTToT = dart.constFn(dart.fnType(T, [T, T])))();
+      return [T$.ObjectN()];
+    }));
+  };
+  interable_extensions['IterableExtensions|chunks'] = function IterableExtensions$124chunks(E, $this, size) {
+    if ($this == null) dart.nullFailed(I[0], 110, 21, "#this");
+    if (size == null) dart.nullFailed(I[0], 110, 32, "size");
+    return partition.partition(E, $this, size);
+  };
+  interable_extensions['IterableExtensions|get#chunks'] = function IterableExtensions$124get$35chunks(E, $this) {
+    if ($this == null) dart.nullFailed(I[0], 110, 21, "#this");
+    return dart.fn(size => {
+      if (size == null) dart.nullFailed(I[0], 110, 32, "size");
+      return interable_extensions['IterableExtensions|chunks'](E, $this, size);
+    }, dart.fnType(core.Iterable$(core.List$(E)), [core.int]));
+  };
+  interable_extensions['IterableExtensions|get#intersperse'] = function IterableExtensions$124get$35intersperse(E, $this) {
+    if ($this == null) dart.nullFailed(I[0], 121, 15, "#this");
+    return dart.fn(element => interable_extensions['IterableExtensions|intersperse'](E, $this, element), dart.fnType(core.Iterable$(E), [E]));
+  };
+  interable_extensions['IterableExtensions|intersperse'] = function IterableExtensions$124intersperse(E, $this, element) {
+    if ($this == null) dart.nullFailed(I[0], 121, 15, "#this");
+    return dart.test($this[$isEmpty]) ? _interceptors.JSArray$(E).of([]) : new (interables.IntersperseIterable$(E)).new($this, element);
+  };
+  interable_extensions['IterableExtensions|joinOf'] = function IterableExtensions$124joinOf(E, $this, getVal, separator = "") {
+    if ($this == null) dart.nullFailed(I[0], 130, 10, "#this");
+    if (getVal == null) dart.nullFailed(I[0], 130, 37, "getVal");
+    if (separator == null) dart.nullFailed(I[0], 130, 53, "separator");
+    return $this[$fold](core.String, "", dart.fn((res, e) => {
+      if (res == null) dart.nullFailed(I[0], 131, 17, "res");
+      return res !== "" ? dart.notNull(res) + dart.notNull(separator) + dart.notNull(getVal(e)) : getVal(e);
+    }, dart.fnType(core.String, [core.String, E])));
+  };
+  interable_extensions['IterableExtensions|get#joinOf'] = function IterableExtensions$124get$35joinOf(E, $this) {
+    if ($this == null) dart.nullFailed(I[0], 130, 10, "#this");
+    return dart.fn((getVal, separator = "") => {
+      if (getVal == null) dart.nullFailed(I[0], 130, 37, "getVal");
+      if (separator == null) dart.nullFailed(I[0], 130, 53, "separator");
+      return interable_extensions['IterableExtensions|joinOf'](E, $this, getVal, separator);
+    }, dart.fnType(core.String, [dart.fnType(core.String, [E])], [core.String]));
+  };
+  interable_extensions['IterableExtensions|toMap'] = function IterableExtensions$124toMap(E, TKey, TVal, $this, getKey, getVal) {
+    if ($this == null) dart.nullFailed(I[0], 139, 19, "#this");
+    if (getKey == null) dart.nullFailed(I[0], 140, 29, "getKey");
+    if (getVal == null) dart.nullFailed(I[0], 140, 55, "getVal");
+    return (() => {
+      let t21 = new (_js_helper.LinkedMap$(TKey, TVal)).new();
+      for (let e of $this)
+        t21[$_set](getKey(e), getVal(e));
+      return t21;
+    })();
+  };
+  interable_extensions['IterableExtensions|get#toMap'] = function IterableExtensions$124get$35toMap(E, $this) {
+    if ($this == null) dart.nullFailed(I[0], 139, 19, "#this");
+    return dart.fn((TKey, TVal, getKey, getVal) => {
+      if (getKey == null) dart.nullFailed(I[0], 140, 29, "getKey");
+      if (getVal == null) dart.nullFailed(I[0], 140, 55, "getVal");
+      return interable_extensions['IterableExtensions|toMap'](E, TKey, TVal, $this, getKey, getVal);
+    }, dart.gFnType((TKey, TVal) => {
+      var MapOfTKey$TVal = () => (MapOfTKey$TVal = dart.constFn(core.Map$(TKey, TVal)))();
+      return [MapOfTKey$TVal(), [dart.fnType(TKey, [E]), dart.fnType(TVal, [E])]];
+    }, (TKey, TVal) => {
+      var MapOfTKey$TVal = () => (MapOfTKey$TVal = dart.constFn(core.Map$(TKey, TVal)))();
+      return [T$.ObjectN(), T$.ObjectN()];
+    }));
+  };
+  interable_extensions['IterableExtensions|sumOf'] = function IterableExtensions$124sumOf(E, $this, getVal) {
+    if ($this == null) dart.nullFailed(I[0], 149, 7, "#this");
+    if (getVal == null) dart.nullFailed(I[0], 149, 30, "getVal");
+    return $this[$fold](core.int, 0, dart.fn((sum, e) => {
+      if (sum == null) dart.nullFailed(I[0], 149, 50, "sum");
+      return dart.notNull(sum) + dart.notNull(getVal(e));
+    }, dart.fnType(core.int, [core.int, E])));
+  };
+  interable_extensions['IterableExtensions|get#sumOf'] = function IterableExtensions$124get$35sumOf(E, $this) {
+    if ($this == null) dart.nullFailed(I[0], 149, 7, "#this");
+    return dart.fn(getVal => {
+      if (getVal == null) dart.nullFailed(I[0], 149, 30, "getVal");
+      return interable_extensions['IterableExtensions|sumOf'](E, $this, getVal);
+    }, dart.fnType(core.int, [dart.fnType(core.int, [E])]));
+  };
+  interable_extensions['IterableExtensions|sumOfDouble'] = function IterableExtensions$124sumOfDouble(E, $this, getVal) {
+    if ($this == null) dart.nullFailed(I[0], 155, 10, "#this");
+    if (getVal == null) dart.nullFailed(I[0], 155, 42, "getVal");
+    return $this[$fold](core.double, 0.0, dart.fn((sum, e) => {
+      if (sum == null) dart.nullFailed(I[0], 156, 16, "sum");
+      return dart.notNull(sum) + dart.notNull(getVal(e));
+    }, dart.fnType(core.double, [core.double, E])));
+  };
+  interable_extensions['IterableExtensions|get#sumOfDouble'] = function IterableExtensions$124get$35sumOfDouble(E, $this) {
+    if ($this == null) dart.nullFailed(I[0], 155, 10, "#this");
+    return dart.fn(getVal => {
+      if (getVal == null) dart.nullFailed(I[0], 155, 42, "getVal");
+      return interable_extensions['IterableExtensions|sumOfDouble'](E, $this, getVal);
+    }, dart.fnType(core.double, [dart.fnType(core.double, [E])]));
+  };
+  interable_extensions['IterableExtensions|avgOf'] = function IterableExtensions$124avgOf(E, $this, getVal) {
+    if ($this == null) dart.nullFailed(I[0], 164, 10, "#this");
+    if (getVal == null) dart.nullFailed(I[0], 164, 33, "getVal");
+    let count = $this[$length];
+    return dart.notNull(count) > 0 ? dart.notNull(interable_extensions['IterableExtensions|sumOf'](E, $this, getVal)) / dart.notNull(count) : 0.0;
+  };
+  interable_extensions['IterableExtensions|get#avgOf'] = function IterableExtensions$124get$35avgOf(E, $this) {
+    if ($this == null) dart.nullFailed(I[0], 164, 10, "#this");
+    return dart.fn(getVal => {
+      if (getVal == null) dart.nullFailed(I[0], 164, 33, "getVal");
+      return interable_extensions['IterableExtensions|avgOf'](E, $this, getVal);
+    }, dart.fnType(core.double, [dart.fnType(core.int, [E])]));
+  };
+  interable_extensions['IterableExtensions|avgOfDouble'] = function IterableExtensions$124avgOfDouble(E, $this, getVal) {
+    if ($this == null) dart.nullFailed(I[0], 175, 10, "#this");
+    if (getVal == null) dart.nullFailed(I[0], 175, 42, "getVal");
+    let count = $this[$length];
+    return dart.notNull(count) > 0 ? dart.notNull(interable_extensions['IterableExtensions|sumOfDouble'](E, $this, getVal)) / dart.notNull(count) : 0.0;
+  };
+  interable_extensions['IterableExtensions|get#avgOfDouble'] = function IterableExtensions$124get$35avgOfDouble(E, $this) {
+    if ($this == null) dart.nullFailed(I[0], 175, 10, "#this");
+    return dart.fn(getVal => {
+      if (getVal == null) dart.nullFailed(I[0], 175, 42, "getVal");
+      return interable_extensions['IterableExtensions|avgOfDouble'](E, $this, getVal);
+    }, dart.fnType(core.double, [dart.fnType(core.double, [E])]));
+  };
+  interable_extensions['IterableExtensions|maxOf'] = function IterableExtensions$124maxOf(E, T, $this, getVal) {
+    if ($this == null) dart.nullFailed(I[0], 186, 5, "#this");
+    if (getVal == null) dart.nullFailed(I[0], 186, 41, "getVal");
+    return dart.test($this[$isEmpty]) ? interable_extensions._zero(T) : interable_extensions['IterableExtensions|reduceValue'](E, T, $this, dart.gbind(C[0] || CT.C0, T), getVal);
+  };
+  interable_extensions['IterableExtensions|get#maxOf'] = function IterableExtensions$124get$35maxOf(E, $this) {
+    if ($this == null) dart.nullFailed(I[0], 186, 5, "#this");
+    return dart.fn((T, getVal) => {
+      if (getVal == null) dart.nullFailed(I[0], 186, 41, "getVal");
+      return interable_extensions['IterableExtensions|maxOf'](E, T, $this, getVal);
+    }, dart.gFnType(T => [T, [dart.fnType(T, [E])]], T => [core.num]));
+  };
+  interable_extensions['IterableExtensions|minOf'] = function IterableExtensions$124minOf(E, T, $this, getVal) {
+    if ($this == null) dart.nullFailed(I[0], 196, 5, "#this");
+    if (getVal == null) dart.nullFailed(I[0], 196, 41, "getVal");
+    return dart.test($this[$isEmpty]) ? interable_extensions._zero(T) : interable_extensions['IterableExtensions|reduceValue'](E, T, $this, dart.gbind(C[1] || CT.C1, T), getVal);
+  };
+  interable_extensions['IterableExtensions|get#minOf'] = function IterableExtensions$124get$35minOf(E, $this) {
+    if ($this == null) dart.nullFailed(I[0], 196, 5, "#this");
+    return dart.fn((T, getVal) => {
+      if (getVal == null) dart.nullFailed(I[0], 196, 41, "getVal");
+      return interable_extensions['IterableExtensions|minOf'](E, T, $this, getVal);
+    }, dart.gFnType(T => [T, [dart.fnType(T, [E])]], T => [core.num]));
+  };
+  interable_extensions['NullableIterableExtensions|get#isNullOrEmpty'] = function NullableIterableExtensions$124get$35isNullOrEmpty(E, $this) {
+    let t36, t36$;
+    t36$ = (t36 = $this, t36 == null ? null : t36[$isEmpty]);
+    return t36$ == null ? true : t36$;
+  };
+  interable_extensions['NullableIterableExtensions|get#isNotNullOrEmpty'] = function NullableIterableExtensions$124get$35isNotNullOrEmpty(E, $this) {
+    let t37, t37$;
+    t37$ = (t37 = $this, t37 == null ? null : t37[$isNotEmpty]);
+    return t37$ == null ? false : t37$;
+  };
+  interable_extensions['NumIterableExtensions|max'] = function NumIterableExtensions$124max(E, $this) {
+    if ($this == null) dart.nullFailed(I[0], 220, 5, "#this");
+    return dart.test($this[$isEmpty]) ? interable_extensions._zero(E) : $this[$reduce](dart.gbind(C[0] || CT.C0, E));
+  };
+  interable_extensions['NumIterableExtensions|get#max'] = function NumIterableExtensions$124get$35max(E, $this) {
+    if ($this == null) dart.nullFailed(I[0], 220, 5, "#this");
+    return dart.fn(() => interable_extensions['NumIterableExtensions|max'](E, $this), dart.fnType(E, []));
+  };
+  interable_extensions['NumIterableExtensions|min'] = function NumIterableExtensions$124min(E, $this) {
+    if ($this == null) dart.nullFailed(I[0], 223, 5, "#this");
+    return dart.test($this[$isEmpty]) ? interable_extensions._zero(E) : $this[$reduce](dart.gbind(C[1] || CT.C1, E));
+  };
+  interable_extensions['NumIterableExtensions|get#min'] = function NumIterableExtensions$124get$35min(E, $this) {
+    if ($this == null) dart.nullFailed(I[0], 223, 5, "#this");
+    return dart.fn(() => interable_extensions['NumIterableExtensions|min'](E, $this), dart.fnType(E, []));
+  };
+  interable_extensions['IntIterableExtensions|sum'] = function IntIterableExtensions$124sum($this) {
+    if ($this == null) dart.nullFailed(I[0], 231, 7, "#this");
+    return $this[$fold](core.int, 0, dart.fn((sum, v) => {
+      if (sum == null) dart.nullFailed(I[0], 231, 25, "sum");
+      if (v == null) dart.nullFailed(I[0], 231, 30, "v");
+      return dart.notNull(sum) + dart.notNull(v);
+    }, T$.intAndintToint()));
+  };
+  interable_extensions['IntIterableExtensions|get#sum'] = function IntIterableExtensions$124get$35sum($this) {
+    if ($this == null) dart.nullFailed(I[0], 231, 7, "#this");
+    return dart.fn(() => interable_extensions['IntIterableExtensions|sum']($this), T$.VoidToint());
+  };
+  interable_extensions['IntIterableExtensions|avg'] = function IntIterableExtensions$124avg($this) {
+    if ($this == null) dart.nullFailed(I[0], 236, 10, "#this");
+    return dart.test($this[$isNotEmpty]) ? dart.notNull(interable_extensions['IntIterableExtensions|sum']($this)) / dart.notNull($this[$length]) : 0.0;
+  };
+  interable_extensions['IntIterableExtensions|get#avg'] = function IntIterableExtensions$124get$35avg($this) {
+    if ($this == null) dart.nullFailed(I[0], 236, 10, "#this");
+    return dart.fn(() => interable_extensions['IntIterableExtensions|avg']($this), T$.VoidTodouble());
+  };
+  interable_extensions['DoubleIterableExtensions|sum'] = function DoubleIterableExtensions$124sum($this) {
+    if ($this == null) dart.nullFailed(I[0], 244, 10, "#this");
+    return $this[$fold](core.double, 0.0, dart.fn((sum, v) => {
+      if (sum == null) dart.nullFailed(I[0], 244, 28, "sum");
+      if (v == null) dart.nullFailed(I[0], 244, 33, "v");
+      return dart.notNull(sum) + dart.notNull(v);
+    }, T$.doubleAnddoubleTodouble()));
+  };
+  interable_extensions['DoubleIterableExtensions|get#sum'] = function DoubleIterableExtensions$124get$35sum($this) {
+    if ($this == null) dart.nullFailed(I[0], 244, 10, "#this");
+    return dart.fn(() => interable_extensions['DoubleIterableExtensions|sum']($this), T$.VoidTodouble());
+  };
+  interable_extensions['DoubleIterableExtensions|avg'] = function DoubleIterableExtensions$124avg($this) {
+    if ($this == null) dart.nullFailed(I[0], 249, 10, "#this");
+    return dart.test($this[$isNotEmpty]) ? dart.notNull(interable_extensions['DoubleIterableExtensions|sum']($this)) / dart.notNull($this[$length]) : 0.0;
+  };
+  interable_extensions['DoubleIterableExtensions|get#avg'] = function DoubleIterableExtensions$124get$35avg($this) {
+    if ($this == null) dart.nullFailed(I[0], 249, 10, "#this");
+    return dart.fn(() => interable_extensions['DoubleIterableExtensions|avg']($this), T$.VoidTodouble());
+  };
+  interable_extensions._zero = function _zero(T) {
+    return dart.wrapType(T)._equals(dart.wrapType(core.int)) ? T.as(0) : T.as(0.0);
+  };
+  interable_extensions._getUnorderedEquality = function _getUnorderedEquality(T) {
+    let t52, t51, t50, t49;
+    return equality.UnorderedIterableEquality$(T).as((t49 = interable_extensions._unorderedEquality[$_get](dart.wrapType(T)), t49 == null ? (t50 = interable_extensions._unorderedEquality, t51 = dart.wrapType(T), t52 = new (equality.UnorderedIterableEquality$(T)).new(), t50[$_set](t51, t52), t52) : t49));
+  };
+  dart.defineLazy(interable_extensions, {
+    /*interable_extensions._unorderedEquality*/get _unorderedEquality() {
+      return new (T$.LinkedMapOfType$UnorderedIterableEquality()).new();
+    }
+  }, false);
+  dart.trackLibraries("packages/list_ext/src/interable_extensions.dart", {
+    "package:list_ext/src/interable_extensions.dart": interable_extensions
+  }, {
+  }, '{"version":3,"sourceRoot":"","sources":["interable_extensions.dart"],"names":[],"mappings":"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","file":"../../../../../../../../../packages/list_ext/src/interable_extensions.dart.lib.js"}');
+  // Exports:
+  return {
+    src__interable_extensions: interable_extensions
+  };
+}));
+
+//# sourceMappingURL=interable_extensions.dart.lib.js.map
